@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-    [SerializeField] private Transform[] movePoint;
+    public Transform[] movePoint;
 
     [SerializeField, Space] private Material playerMaterial;
     [SerializeField] private Material wireframeMaterial;
@@ -15,6 +15,8 @@ public class Movement : MonoBehaviour
 
     [SerializeField, Space] private int currentPointIndex;
     [SerializeField] private int lastPointIndex;
+
+    public int CurrentPointIndex { get { return currentPointIndex; } }
 
     float delay = 0;
     bool switching = false;
