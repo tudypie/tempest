@@ -24,6 +24,6 @@ public class ScoreManager : MonoBehaviour
     public void AddScore(int playerNumber)
     {
         score[playerNumber].scoreValue++;
-        score[playerNumber].scoreText.text = score[playerNumber].scoreValue.ToString("000");
+        score[playerNumber].scoreText.text = score[playerNumber].scoreValue.ToString("00");
     }
 }
