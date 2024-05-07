@@ -14,6 +14,7 @@ public class Enemy : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             Debug.Log(other.gameObject.name + " was hit");
+            Destroy(gameObject);
         }
 
         if (other.gameObject.CompareTag("FrontBarrier"))

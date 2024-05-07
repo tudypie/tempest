@@ -1,92 +1,97 @@
+using System;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Movement : MonoBehaviour
 {
-    public Transform[] movePoint;
+    public int playerNumber;
 
-    [SerializeField, Space] private Material playerMaterial;
-    [SerializeField] private Material wireframeMaterial;
-
-    [SerializeField, Space] private KeyCode leftKey;
-    [SerializeField] private KeyCode rightKey;
+    [HideInInspector] public MeshRenderer playerMesh;
+    public Material playerMaterial;
+    public Material wireframeMaterial;
 
     [SerializeField, Space] private float inputDelay = 0.05f;
-    [SerializeField] private float switchSmooth = 0.1f;
 
     [SerializeField, Space] private int currentPointIndex;
     [SerializeField] private int lastPointIndex;
 
+    private Vector2 movementInput;
+    private float delay = 0;
+
     public int CurrentPointIndex { get { return currentPointIndex; } }
 
-    float delay = 0;
-    bool switching = false;
+    private float Horizontal { get; set; }
+
+    private PlayerManager playerManager;
 
     private void Awake()
     {
+        playerMesh = GetComponentInChildren<MeshRenderer>();
+    }
+
+    private void Start()
+    {
+        playerManager = PlayerManager.Instance;
+        playerManager.OnPlayerJoin(this);
         SetPlayerOnMovePoint();
+    }
+
+    public void OnMove(InputAction.CallbackContext context)
+    {
+        var direction = context.ReadValue<Vector2>();
+        Horizontal = direction.x;
     }
 
     private void Update()
     {
-        movePoint[currentPointIndex].parent.GetComponent<Renderer>().material = playerMaterial;
+        playerManager.movePoint[currentPointIndex].parent.GetComponent<Renderer>().material = playerMaterial;
 
-        if (switching)
+        if (delay > 0)
         {
-            transform.position = Vector3.Lerp(transform.position, movePoint[currentPointIndex].position, switchSmooth);
-            transform.rotation = Quaternion.Lerp(transform.rotation, movePoint[currentPointIndex].rotation, switchSmooth);
-            Invoke(nameof(EndLerp), 0.5f);
+            delay -= Time.deltaTime;
+            return;
         }
 
-        if(Input.GetKey(rightKey))
+        if(Horizontal > 0)
         {
-            if (delay > 0)
-            {
-                delay -= Time.deltaTime;
-                return;
-            }
-
-            lastPointIndex = currentPointIndex;
-            currentPointIndex++;
-
-            if(currentPointIndex >= movePoint.Length)
-                currentPointIndex = 0;
-
-            SetPlayerOnMovePoint();
-
-            delay = inputDelay;
+            MoveLeft();
         }
-
-        if (Input.GetKey(leftKey))
+        else if (Horizontal < 0) 
         {
-            if (delay > 0)
-            {
-                delay -= Time.deltaTime;
-                return;
-            }
-
-            lastPointIndex = currentPointIndex;
-            currentPointIndex--;
-
-            if (currentPointIndex < 0)
-                currentPointIndex = movePoint.Length-1;
-
-            SetPlayerOnMovePoint();
-
-            delay = inputDelay;
+            MoveRight();
         }
+    }
+
+    private void MoveLeft()
+    {
+        lastPointIndex = currentPointIndex;
+        currentPointIndex++;
+
+        if (currentPointIndex >= playerManager.movePoint.Length)
+            currentPointIndex = 0;
+
+        SetPlayerOnMovePoint();
+
+        delay = inputDelay;
+    }
+
+    private void MoveRight()
+    {
+        lastPointIndex = currentPointIndex;
+        currentPointIndex--;
+
+        if (currentPointIndex < 0)
+            currentPointIndex = playerManager.movePoint.Length - 1;
+
+        SetPlayerOnMovePoint();
+
+        delay = inputDelay;
     }
 
     private void SetPlayerOnMovePoint()
     {
-        CancelInvoke();
-        switching = true;
-        movePoint[lastPointIndex].parent.GetComponent<Renderer>().material = wireframeMaterial;
-    }
-
-    private void EndLerp()
-    {
-        transform.position = movePoint[currentPointIndex].position;
-        transform.rotation = movePoint[currentPointIndex].rotation;
-        switching = false;
+        transform.position = playerManager.movePoint[currentPointIndex].position;
+        transform.rotation = playerManager.movePoint[currentPointIndex].rotation;
+        playerManager.movePoint[lastPointIndex].parent.GetComponent<Renderer>().material = wireframeMaterial;
     }
 }

@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 5461091092337416280}
   - component: {fileID: 4376635875583575717}
   - component: {fileID: 7405740394209705815}
+  - component: {fileID: 9055620751657384752}
+  - component: {fileID: 3437689602385521536}
   - component: {fileID: 1286350545368558925}
   - component: {fileID: 4202955783768081578}
-  - component: {fileID: 9055620751657384752}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -85,63 +86,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!114 &1286350545368558925
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4648385270819980002}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8bd81e59cbf04d8409d73d3054137081, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  movePoint:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  playerMaterial: {fileID: 2100000, guid: 6ef270c585e2c474c97d74cb09d4b818, type: 2}
-  wireframeMaterial: {fileID: 2100000, guid: 447bfd94daae92548af0f01995c96304, type: 2}
-  leftKey: 97
-  rightKey: 100
-  inputDelay: 0.04
-  switchSmooth: 0.3
-  currentPointIndex: 0
-  lastPointIndex: 0
---- !u!114 &4202955783768081578
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4648385270819980002}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b4a9b81a41849e540b1b08a4793dd6d5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerNumber: 0
-  projectile: {fileID: 7620357718572601899, guid: 05e4a62545db2be4eb52eb9fe246b8d4,
-    type: 3}
-  shootKey: 32
-  spawnOffset: {x: 0, y: 0, z: 0}
-  shootDelay: 0.15
 --- !u!82 &9055620751657384752
 AudioSource:
   m_ObjectHideFlags: 0
@@ -156,7 +100,7 @@ AudioSource:
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
-  m_Pitch: 1.3
+  m_Pitch: 1
   Loop: 0
   Mute: 0
   Spatialize: 0
@@ -239,6 +183,105 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &3437689602385521536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4648385270819980002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: e56576b83091c624d8bc065c4820acbf,
+    type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1286350545368558925}
+        m_TargetAssemblyTypeName: Movement, Assembly-CSharp
+        m_MethodName: OnMove
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: a50fe826-d0bd-45e2-a3c9-5f9e1c900310
+    m_ActionName: 'Player/Move[/XInputControllerWindows/leftStick,/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4202955783768081578}
+        m_TargetAssemblyTypeName: Shooting, Assembly-CSharp
+        m_MethodName: OnShoot
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 48b129c5-04a9-44d8-96dd-1383b91b4627
+    m_ActionName: 'Player/Fire[/XInputControllerWindows/rightTrigger,/Keyboard/space]'
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Gameplay
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
+--- !u!114 &1286350545368558925
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4648385270819980002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bd81e59cbf04d8409d73d3054137081, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerNumber: 0
+  playerMesh: {fileID: 0}
+  playerMaterial: {fileID: 2100000, guid: 6ef270c585e2c474c97d74cb09d4b818, type: 2}
+  wireframeMaterial: {fileID: 2100000, guid: 447bfd94daae92548af0f01995c96304, type: 2}
+  inputDelay: 0.035
+  currentPointIndex: 0
+  lastPointIndex: 0
+--- !u!114 &4202955783768081578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4648385270819980002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4a9b81a41849e540b1b08a4793dd6d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectile: {fileID: 7620357718572601899, guid: 05e4a62545db2be4eb52eb9fe246b8d4,
+    type: 3}
+  shootKey: 32
+  spawnOffset: {x: 0, y: 0, z: 0}
+  shootDelay: 0.05
 --- !u!1001 &5679782545421732079
 PrefabInstance:
   m_ObjectHideFlags: 0
