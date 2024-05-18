@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class bOSS : MonoBehaviour
+public class Boss : MonoBehaviour
 {
     [SerializeField] private float maxHp = 100;
     [SerializeField] private float hp;

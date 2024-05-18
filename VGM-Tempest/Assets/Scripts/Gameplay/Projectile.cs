@@ -29,7 +29,7 @@ public class Projectile : MonoBehaviour
 
         if (other.gameObject.CompareTag("Boss"))
         {
-            other.GetComponent<bOSS>().TakeDamage(damage);
+            other.GetComponent<Boss>().TakeDamage(damage);
         }
 
         if (other.gameObject.CompareTag("Player"))
