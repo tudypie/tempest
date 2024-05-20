@@ -1,19 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
     public AudioClip shoot, explosion;
-
-    [HideInInspector]
-    public AudioSource audioSource;
-
-    public static AudioManager Instance;
+    [HideInInspector] public AudioSource audioSource;
 
     private void Awake()
     {
-        Instance = this;
         audioSource = GetComponent<AudioSource>();
     }
 

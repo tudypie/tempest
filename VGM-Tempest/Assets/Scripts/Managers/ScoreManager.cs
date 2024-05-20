@@ -13,14 +13,6 @@ public class ScoreManager : MonoBehaviour
 
     [SerializeField] private PlayerScore[] score;
 
-    public static ScoreManager Instance;
-
-    private void Awake()
-    {
-        Instance = this;
-        DontDestroyOnLoad(gameObject);
-    }
-
     public void AddScore(int playerNumber)
     {
         score[playerNumber].scoreValue++;

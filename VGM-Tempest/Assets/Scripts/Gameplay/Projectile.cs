@@ -5,8 +5,7 @@ public class Projectile : MovingObject
     [SerializeField] private float damage;
     [HideInInspector] public int playerNumber;
 
-    private ScoreManager scoreManager;
-    private AudioManager audioManager;
+    private GameManager gameManager;
 
     private void Awake()
     {
@@ -15,16 +14,15 @@ public class Projectile : MovingObject
 
     private void Start()
     {
-        scoreManager = ScoreManager.Instance;
-        audioManager = AudioManager.Instance;
+        gameManager = GameManager.Instance;
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if(other.TryGetComponent(out Enemy enemy))
         {
-            scoreManager.AddScore(playerNumber);
-            audioManager.PlaySoundWithRandomPitch(audioManager.audioSource, audioManager.explosion, 60, 180);
+            gameManager.scoreManager.AddScore(playerNumber);
+            gameManager.audioManager.PlaySoundWithRandomPitch(gameManager.audioManager.audioSource, gameManager.audioManager.explosion, 60, 180);
             Destroy(other.gameObject);
             Destroy(gameObject);
         }

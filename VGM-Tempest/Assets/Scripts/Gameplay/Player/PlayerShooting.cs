@@ -16,7 +16,7 @@ public class PlayerShooting : MonoBehaviour
     {
         if (context.performed)
         {
-            if (currentShootDelay > 0) return;
+            if (currentShootDelay > 0 || gameManager == null) return;
             Shoot();
             currentShootDelay = shootDelay;
         }
@@ -47,6 +47,6 @@ public class PlayerShooting : MonoBehaviour
         GameObject newProjectile = gameManager.SpawnObjectOnMap(projectile, playerManager.movement.CurrentPointIndex, spawnOffset);
         newProjectile.GetComponentInChildren<Renderer>().material = playerManager.playerMaterial;
         newProjectile.GetComponent<Projectile>().playerNumber = playerManager.playerNumber;
-        AudioManager.Instance.PlaySound(audioSource, AudioManager.Instance.shoot);
+        gameManager.audioManager.PlaySound(audioSource, gameManager.audioManager.shoot);
     }
 }

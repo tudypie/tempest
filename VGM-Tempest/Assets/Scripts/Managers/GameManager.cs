@@ -9,6 +9,10 @@ public class GameManager : MonoBehaviour
     public Material[] playerMaterial;
     public Transform[] movePoint;
 
+    public AudioManager audioManager;
+    public ScoreManager scoreManager;
+    public TextManager textManager;
+
     public static GameManager Instance { get; private set; }
 
     private void Awake()
@@ -22,6 +26,10 @@ public class GameManager : MonoBehaviour
             Instance = this;
             DontDestroyOnLoad(gameObject);
         }
+
+        audioManager = GetComponent<AudioManager>();
+        scoreManager = GetComponent<ScoreManager>();
+        textManager = GetComponent<TextManager>();
     }
 
     public void OnPlayerJoin(PlayerManager player)
