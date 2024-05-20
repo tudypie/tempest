@@ -4,30 +4,35 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    [SerializeField] private Transform[] spawnpoint;
+    [SerializeField] private float spawnDelay;
+    private float currentSpawnDelay;
+    [SerializeField] private bool keepRotation;
     [SerializeField] private GameObject[] enemy;
     [SerializeField] private Vector3 spawnOffset;
-    [SerializeField] private float spawnTime;
-    [SerializeField] private bool followRotation;
-    float spawnDelay;
+
+    private GameManager gameManager;
+
+    private void Start()
+    {
+        gameManager = GameManager.Instance;
+    }
 
     private void Update()
     {
-        if(spawnDelay > 0)
+        if(currentSpawnDelay > 0)
         {
-            spawnDelay -= Time.deltaTime;
+            currentSpawnDelay -= Time.deltaTime;
         }
         else
         {
             SpawnEnemy();
-            spawnDelay = spawnTime;
+            currentSpawnDelay = spawnDelay;
         }
     }
 
     private void SpawnEnemy()
     {
-        int rndSpawn = Random.Range(0, spawnpoint.Length);
-        Instantiate(enemy[0], spawnpoint[rndSpawn].position + spawnOffset, 
-            followRotation ? spawnpoint[rndSpawn].rotation : Quaternion.identity);
+        int rndSpawn = Random.Range(0, gameManager.movePoint.Length);
+        gameManager.SpawnObjectOnMap(enemy[0], rndSpawn, spawnOffset, keepRotation);
     }
 }

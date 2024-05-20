@@ -16,7 +16,6 @@ public class Boss : MonoBehaviour
     {
         hp -= damage;
         healthBar.fillAmount = hp / maxHp;
-
         if (hp < 0)
         {
             Destroy(gameObject);

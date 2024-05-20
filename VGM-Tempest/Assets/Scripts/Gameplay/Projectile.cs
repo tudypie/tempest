@@ -1,35 +1,37 @@
 using UnityEngine;
 
-public class Projectile : MonoBehaviour
+public class Projectile : MovingObject
 {
-    [SerializeField] private float speed;
     [SerializeField] private float damage;
+    [HideInInspector] public int playerNumber;
 
-    public int playerNumber;
+    private ScoreManager scoreManager;
+    private AudioManager audioManager;
 
     private void Awake()
     {
         Destroy(gameObject, 3f);
     }
 
-    private void Update()
+    private void Start()
     {
-        transform.Translate(Vector3.forward * speed* Time.deltaTime);
+        scoreManager = ScoreManager.Instance;
+        audioManager = AudioManager.Instance;
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.CompareTag("Enemy"))
+        if(other.TryGetComponent(out Enemy enemy))
         {
-            ScoreManager.Instance.AddScore(playerNumber);
-            AudioManager.Instance.PlaySoundWithRandomPitch(AudioManager.Instance.audioSource, AudioManager.Instance.explosion, 60, 180);
+            scoreManager.AddScore(playerNumber);
+            audioManager.PlaySoundWithRandomPitch(audioManager.audioSource, audioManager.explosion, 60, 180);
             Destroy(other.gameObject);
             Destroy(gameObject);
         }
 
-        if (other.gameObject.CompareTag("Boss"))
+        if (other.TryGetComponent(out Boss boss))
         {
-            other.GetComponent<Boss>().TakeDamage(damage);
+            boss.TakeDamage(damage);
         }
 
         if (other.gameObject.CompareTag("Player"))

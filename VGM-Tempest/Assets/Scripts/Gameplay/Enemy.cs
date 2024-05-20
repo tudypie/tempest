@@ -1,14 +1,7 @@
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class Enemy : MovingObject
 {
-    [SerializeField] private float speed;
-
-    private void Update()
-    {
-        transform.Translate(Vector3.back * speed * Time.deltaTime);
-    }
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
