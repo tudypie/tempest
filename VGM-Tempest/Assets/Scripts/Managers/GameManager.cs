@@ -9,9 +9,9 @@ public class GameManager : MonoBehaviour
     public Material[] playerMaterial;
     public Transform[] movePoint;
 
-    public AudioManager audioManager;
-    public ScoreManager scoreManager;
-    public TextManager textManager;
+    [HideInInspector] public AudioManager audioManager;
+    [HideInInspector] public ScoreManager scoreManager;
+    [HideInInspector] public TextManager textManager;
 
     public static GameManager Instance { get; private set; }
 
@@ -43,5 +43,14 @@ public class GameManager : MonoBehaviour
     {
         return Instantiate(objectToSpawn, movePoint[movePointIndex].position + spawnOffset, 
             keepRotation ? Quaternion.identity : movePoint[movePointIndex].rotation);
+    }
+
+    public GameObject SpawnObjectOnMap(GameObject objectToSpawn, int movePointIndex, Vector3 spawnOffset, Vector3 rotationOffset, Vector3 objectScale, bool keepRotation = false)
+    {
+        GameObject spawnedObject = Instantiate(objectToSpawn, movePoint[movePointIndex].position + spawnOffset,
+            keepRotation ? Quaternion.identity : movePoint[movePointIndex].rotation);
+        spawnedObject.transform.Rotate(rotationOffset);
+        spawnedObject.transform.localScale = objectScale;
+        return spawnedObject;
     }
 }

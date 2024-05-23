@@ -1473,7 +1473,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2020145610
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1563,6 +1563,36 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2632686106972015801, guid: 35c8035305c204b4f921ddcc3b964911,
+        type: 3}
+      propertyPath: textMessage
+      value: "Sapiens become humans playing the games.\r\nFirst 50 centuries analogue
+        and last 50 years digital, games are our everyday. We live in the combo of
+        tangible and virtual realities. We look at the screens, we click the buttons,
+        and we have the sensors. On our phone new Flappy Bird and old Princess Peach.
+        And sometimes you have an impression that you are character in video game.
+        Don\u2019t worry \u2014 that\u2019s totally ok.\r\nNow imagine the big space
+        and journey through the playground of digital memories. From Pong to Mario,
+        via Xbox  near Tetris vizavi Solitaire two times left to Quake and above
+        is Prince of Persia seen by Apple Vision. History of interactive  humanity
+        in RGB and hundreds machines and thousand games and welcome to Video Games
+        Museum."
+      objectReference: {fileID: 0}
+    - target: {fileID: 2632686106972015801, guid: 35c8035305c204b4f921ddcc3b964911,
+        type: 3}
+      propertyPath: moveSpawnPoint
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2632686106972015801, guid: 35c8035305c204b4f921ddcc3b964911,
+        type: 3}
+      propertyPath: positionOffset.z
+      value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 2632686106972015801, guid: 35c8035305c204b4f921ddcc3b964911,
+        type: 3}
+      propertyPath: delayBetweenCharacters
+      value: 0.14
       objectReference: {fileID: 0}
     - target: {fileID: 7665138859101526300, guid: 35c8035305c204b4f921ddcc3b964911,
         type: 3}

@@ -4,6 +4,12 @@ public class MovingObject : MonoBehaviour
 {
     public float speed;
     public float direction;
+    public float destroyTime;
+
+    private void Awake()
+    {
+        Destroy(gameObject, destroyTime);
+    }
 
     private void Update()
     {

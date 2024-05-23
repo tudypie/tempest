@@ -4,14 +4,19 @@ using UnityEngine;
 
 public class TextManager : MonoBehaviour
 {
-    [SerializeField] private string textMessage;
+    [SerializeField][TextArea(5, 10)]
+    private string textMessage;
+    [SerializeField] private int moveSpawnPoint;
     [SerializeField] private float delayBetweenCharacters = 0.4f;
-    [SerializeField] private Vector3 spawnPositionOffset;
-    [SerializeField] private Vector3 spawnRotationOffset;
+    [SerializeField] private Vector3 positionOffset;
+    [SerializeField] private Vector3 rotationOffset;
+    //[SerializeField] private Vector3 characterScale;
+    [SerializeField] private GameObject characterPrefab;
     [SerializeField] private char[] characterKey;
-    [SerializeField] private GameObject[] characterPrefab;
+    [SerializeField] private Mesh[] characterMesh;
+    private GameObject spawnedCharacter;
 
-    private Dictionary<char, GameObject> characterDictionary = new Dictionary<char, GameObject>();
+    private Dictionary<char, Mesh> characterDictionary = new Dictionary<char, Mesh>();
 
     private GameManager gameManager;
 
@@ -20,9 +25,14 @@ public class TextManager : MonoBehaviour
         gameManager = GetComponent<GameManager>();
         for(int i = 0; i < characterKey.Length; i++)
         {
-            characterDictionary.Add(characterKey[i], characterPrefab[i]);
+            characterDictionary.Add(characterKey[i], characterMesh[i]);
         }
         SpawnTextMessage();
+    }
+
+    private void Update()
+    {
+
     }
 
     public void SpawnTextMessage()
@@ -35,8 +45,15 @@ public class TextManager : MonoBehaviour
         foreach (char c in textMessage)
         {
             yield return new WaitForSeconds(delayBetweenCharacters);
-            GameObject letter = gameManager.SpawnObjectOnMap(characterDictionary[c], 5, spawnPositionOffset);
-            letter.transform.Rotate(spawnRotationOffset);
+            if (c == ' ' || !characterDictionary.ContainsKey(char.ToUpper(c)))
+            {
+                Debug.Log(c);
+                continue;
+            }
+            spawnedCharacter = gameManager.SpawnObjectOnMap(characterPrefab, moveSpawnPoint, positionOffset);
+            spawnedCharacter.transform.GetChild(0).Rotate(rotationOffset);
+            //spawnedCharacter.transform.GetChild(0).localScale = characterScale;
+            spawnedCharacter.GetComponentInChildren<MeshFilter>().mesh = characterDictionary[char.ToUpper(c)];
         }
     }
 }

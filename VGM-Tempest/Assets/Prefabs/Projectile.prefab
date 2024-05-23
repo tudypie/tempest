@@ -211,5 +211,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 25
   direction: 1
+  destroyTime: 3
   damage: 1
   playerNumber: 0

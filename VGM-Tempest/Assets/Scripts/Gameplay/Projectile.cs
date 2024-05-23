@@ -7,11 +7,6 @@ public class Projectile : MovingObject
 
     private GameManager gameManager;
 
-    private void Awake()
-    {
-        Destroy(gameObject, 3f);
-    }
-
     private void Start()
     {
         gameManager = GameManager.Instance;
