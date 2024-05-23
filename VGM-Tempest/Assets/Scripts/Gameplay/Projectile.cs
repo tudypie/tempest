@@ -5,7 +5,15 @@ public class Projectile : MovingObject
     [SerializeField] private float damage;
     [HideInInspector] public int playerNumber;
 
+    private AudioSource audioSource;
+    private MeshRenderer meshRenderer;
     private GameManager gameManager;
+
+    private void Awake()
+    {
+        audioSource = GetComponent<AudioSource>();
+        meshRenderer = GetComponentInChildren<MeshRenderer>();
+    }
 
     private void Start()
     {
@@ -17,9 +25,11 @@ public class Projectile : MovingObject
         if(other.TryGetComponent(out Enemy enemy))
         {
             gameManager.scoreManager.AddScore(playerNumber);
-            gameManager.audioManager.PlaySoundWithRandomPitch(gameManager.audioManager.audioSource, gameManager.audioManager.explosion, 60, 180);
+            gameManager.audioManager.PlaySoundWithRandomPitch(audioSource, gameManager.audioManager.explosion, 60, 180);
             Destroy(other.gameObject);
-            Destroy(gameObject);
+            meshRenderer.enabled = false;
+            speed = 0;
+            Destroy(gameObject, 3f);
         }
 
         if (other.TryGetComponent(out Boss boss))

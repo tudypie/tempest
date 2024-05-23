@@ -7,7 +7,8 @@ public class GameManager : MonoBehaviour
     public int playersInGame = 0;
     public Material wireframeMaterial;
     public Material[] playerMaterial;
-    public Transform[] movePoint;
+    public Material[] playerLineMaterial;
+    public Transform[] wireframeLine;
 
     [HideInInspector] public AudioManager audioManager;
     [HideInInspector] public ScoreManager scoreManager;
@@ -39,16 +40,21 @@ public class GameManager : MonoBehaviour
         playersInGame++;
     }
 
-    public GameObject SpawnObjectOnMap(GameObject objectToSpawn, int movePointIndex, Vector3 spawnOffset, bool keepRotation = false)
+    public void SetLineColor(int index, int player)
     {
-        return Instantiate(objectToSpawn, movePoint[movePointIndex].position + spawnOffset, 
-            keepRotation ? Quaternion.identity : movePoint[movePointIndex].rotation);
+        wireframeLine[index].parent.GetComponent<Renderer>().material = playerLineMaterial[player];
     }
 
-    public GameObject SpawnObjectOnMap(GameObject objectToSpawn, int movePointIndex, Vector3 spawnOffset, Vector3 rotationOffset, Vector3 objectScale, bool keepRotation = false)
+    public GameObject SpawnObjectOnMap(GameObject objectToSpawn, int wireframeLineIndex, Vector3 spawnOffset, bool keepRotation = false)
     {
-        GameObject spawnedObject = Instantiate(objectToSpawn, movePoint[movePointIndex].position + spawnOffset,
-            keepRotation ? Quaternion.identity : movePoint[movePointIndex].rotation);
+        return Instantiate(objectToSpawn, wireframeLine[wireframeLineIndex].position + spawnOffset, 
+            keepRotation ? Quaternion.identity : wireframeLine[wireframeLineIndex].rotation);
+    }
+
+    public GameObject SpawnObjectOnMap(GameObject objectToSpawn, int wireframeLineIndex, Vector3 spawnOffset, Vector3 rotationOffset, Vector3 objectScale, bool keepRotation = false)
+    {
+        GameObject spawnedObject = Instantiate(objectToSpawn, wireframeLine[wireframeLineIndex].position + spawnOffset,
+            keepRotation ? Quaternion.identity : wireframeLine[wireframeLineIndex].rotation);
         spawnedObject.transform.Rotate(rotationOffset);
         spawnedObject.transform.localScale = objectScale;
         return spawnedObject;

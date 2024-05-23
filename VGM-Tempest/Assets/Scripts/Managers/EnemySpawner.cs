@@ -32,7 +32,7 @@ public class EnemySpawner : MonoBehaviour
 
     private void SpawnEnemy()
     {
-        int rndSpawn = Random.Range(0, gameManager.movePoint.Length);
+        int rndSpawn = Random.Range(0, gameManager.wireframeLine.Length);
         gameManager.SpawnObjectOnMap(enemy[0], rndSpawn, spawnOffset, keepRotation);
     }
 }

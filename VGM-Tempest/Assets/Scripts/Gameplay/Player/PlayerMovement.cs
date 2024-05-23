@@ -28,12 +28,12 @@ public class PlayerMovement : MonoBehaviour
     private void Start()
     {
         gameManager = GameManager.Instance;
-        SetPlayerOnMovePoint();
+        SetPlayerOnWireframeLine();
     }
 
     private void Update()
     {
-        gameManager.movePoint[currentPointIndex].parent.GetComponent<Renderer>().material = playerManager.playerMaterial;
+        gameManager.SetLineColor(currentPointIndex, playerManager.playerNumber);
 
         if (currentMoveDelay > 0)
         {
@@ -51,34 +51,34 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private void MoveLeft()
+    private void MoveRight()
     {
         lastPointIndex = currentPointIndex;
         currentPointIndex++;
 
-        if (currentPointIndex >= gameManager.movePoint.Length)
+        if (currentPointIndex >= gameManager.wireframeLine.Length)
             currentPointIndex = 0;
 
-        SetPlayerOnMovePoint();
+        SetPlayerOnWireframeLine();
 
         currentMoveDelay = moveDelay;
     }
 
-    private void MoveRight()
+    private void MoveLeft()
     {
         lastPointIndex = currentPointIndex;
         currentPointIndex--;
 
         if (currentPointIndex < 0)
-            currentPointIndex = gameManager.movePoint.Length - 1;
-        SetPlayerOnMovePoint();
+            currentPointIndex = gameManager.wireframeLine.Length - 1;
+        SetPlayerOnWireframeLine();
         currentMoveDelay = moveDelay;
     }
 
-    private void SetPlayerOnMovePoint()
+    private void SetPlayerOnWireframeLine()
     {
-        transform.position = gameManager.movePoint[currentPointIndex].position;
-        transform.rotation = gameManager.movePoint[currentPointIndex].rotation;
-        gameManager.movePoint[lastPointIndex].parent.GetComponent<Renderer>().material = gameManager.wireframeMaterial;
+        transform.position = gameManager.wireframeLine[currentPointIndex].position;
+        transform.rotation = gameManager.wireframeLine[currentPointIndex].rotation;
+        gameManager.wireframeLine[lastPointIndex].parent.GetComponent<Renderer>().material = gameManager.wireframeMaterial;
     }
 }

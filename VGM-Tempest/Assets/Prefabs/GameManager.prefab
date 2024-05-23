@@ -133,7 +133,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.06170094, g: 1, b: 0, a: 1}
+  m_Color: {r: 0.030668736, g: 0, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -212,7 +212,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.91188633, g: 1, b: 0, a: 1}
+  m_Color: {r: 1, g: 0, b: 0.10866308, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -388,11 +388,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playersInGame: 0
-  wireframeMaterial: {fileID: 2100000, guid: 1018bf410c7c3c6459233f51efe3cd35, type: 2}
+  wireframeMaterial: {fileID: 2100000, guid: c450266951ae3944fbb5ce7ad5cfd992, type: 2}
   playerMaterial:
-  - {fileID: 2100000, guid: 6ef270c585e2c474c97d74cb09d4b818, type: 2}
-  - {fileID: 2100000, guid: 3186603ff644bfd4b946b9f9d68fbbc6, type: 2}
-  movePoint:
+  - {fileID: 2100000, guid: d93c39b575b54ce438c3e3a296c2a1fc, type: 2}
+  - {fileID: 2100000, guid: 30754c4756d28a2459f7528ef5b0c5a9, type: 2}
+  playerLineMaterial:
+  - {fileID: 2100000, guid: a7e445ccb6b85984991d580f058c6ebe, type: 2}
+  - {fileID: 2100000, guid: 97f02f9071336b149b55265cccf4c1c0, type: 2}
+  wireframeLine:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
@@ -458,9 +461,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8facb372e829802469b98e38e5be1d27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textMessage: ABCDEFGHIJKLMNOPQRSTUVWXYZ
-  delayBetweenCharacters: 0.3
-  positionOffset: {x: 0, y: 0, z: 30}
+  textMessage: "Sapiens become humans playing the games.\r\nFirst 50 centuries analogue
+    and last 50 years digital, games are our everyday. We live in the combo of tangible
+    and virtual realities. We look at the screens, we click the buttons, and we have
+    the sensors. On our phone new Flappy Bird and old Princess Peach. And sometimes
+    you have an impression that you are character in video game. Don\u2019t worry
+    \u2014 that\u2019s totally ok.\r\nNow imagine the big space and journey through
+    the playground of digital memories. From Pong to Mario, via Xbox  near Tetris
+    vizavi Solitaire two times left to Quake and above is Prince of Persia seen by
+    Apple Vision. History of interactive  humanity in RGB and hundreds machines and
+    thousand games and welcome to Video Games Museum."
+  moveSpawnPoint: 14
+  delayBetweenCharacters: 0.14
+  positionOffset: {x: 0, y: 0, z: 24}
   rotationOffset: {x: 90, y: 90, z: 0}
   characterPrefab: {fileID: 416565165024829820, guid: 741551e08a0cc174bbe83c59c02d6264,
     type: 3}

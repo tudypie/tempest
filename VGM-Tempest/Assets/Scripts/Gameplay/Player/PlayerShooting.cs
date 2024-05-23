@@ -10,7 +10,6 @@ public class PlayerShooting : MonoBehaviour
 
     private PlayerManager playerManager;
     private GameManager gameManager;
-    private AudioSource audioSource;
 
     public void OnShoot(InputAction.CallbackContext context)
     {
@@ -25,7 +24,6 @@ public class PlayerShooting : MonoBehaviour
     private void Awake()
     {
         playerManager = GetComponent<PlayerManager>();
-        audioSource = GetComponent<AudioSource>();
     }
 
     private void Start()
@@ -47,6 +45,6 @@ public class PlayerShooting : MonoBehaviour
         GameObject newProjectile = gameManager.SpawnObjectOnMap(projectile, playerManager.movement.CurrentPointIndex, spawnOffset);
         newProjectile.GetComponentInChildren<Renderer>().material = playerManager.playerMaterial;
         newProjectile.GetComponent<Projectile>().playerNumber = playerManager.playerNumber;
-        gameManager.audioManager.PlaySound(audioSource, gameManager.audioManager.shoot);
+        gameManager.audioManager.PlaySound(playerManager.audioSource, gameManager.audioManager.shoot);
     }
 }
