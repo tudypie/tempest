@@ -2,15 +2,15 @@ using UnityEngine;
 
 public class Boss : MonoBehaviour
 {
-    [SerializeField] private float maxHp = 100;
-    [SerializeField] private float hp;
+    public float maxHp = 100;
+    public float hp;
 
     private void Awake()
     {
         hp = maxHp;
     }
 
-    public void TakeDamage(float damage)
+    public virtual void TakeDamage(float damage)
     {
         hp -= damage;
         if (hp < 0)

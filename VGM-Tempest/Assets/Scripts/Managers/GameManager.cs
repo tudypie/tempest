@@ -55,9 +55,13 @@ public class GameManager : MonoBehaviour
 
         audioManager = GetComponent<AudioManager>();
         scoreManager = GetComponent<ScoreManager>();
-        textManager = TextManager.Instance;
 
         currentLevelDuration = levels[currentLevelCount].duration;
+    }
+
+    private void Start()
+    {
+        textManager = TextManager.Instance;
     }
 
     private void Update()

@@ -1578,8 +1578,10 @@ MonoBehaviour:
   levels:
   - name: Level1
     duration: 10
+    bossfight: 0
   - name: Level2
-    duration: 10
+    duration: 0
+    bossfight: 1
   endLevelMessages:
   - 'help us open video game museum
 
