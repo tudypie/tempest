@@ -14,6 +14,7 @@ public class PlayerManager : MonoBehaviour
 
     private void Awake()
     {
+        DontDestroyOnLoad(gameObject);
         movement = GetComponent<PlayerMovement>();
         shooting = GetComponent<PlayerShooting>();
         meshRenderer = GetComponentInChildren<MeshRenderer>();

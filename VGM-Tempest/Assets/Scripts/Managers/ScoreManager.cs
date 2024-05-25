@@ -13,9 +13,9 @@ public class ScoreManager : MonoBehaviour
 
     [SerializeField] private PlayerScore[] score;
 
-    public void AddScore(int playerNumber)
+    public void AddScore(int playerNumber, int value = 1)
     {
-        score[playerNumber].scoreValue++;
+        score[playerNumber].scoreValue += value;
         score[playerNumber].scoreText.text = score[playerNumber].scoreValue.ToString("00");
     }
 }

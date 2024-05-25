@@ -1,13 +1,18 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    [SerializeField] private float spawnDelay;
-    private float currentSpawnDelay;
-    [SerializeField] private bool keepRotation;
+    [Header("References")]
     [SerializeField] private GameObject[] enemy;
+
+    [Header("Spawning Settings")]
+    [SerializeField] private float beginSpawningDelay = 3;
+    [SerializeField] private float spawningDuration = 5;
+    [SerializeField] private float spawnDelay = 0.3f;
+    private float currentSpawnDelay;
+
+    [Header("Enemy Settings")]
+    [SerializeField] private bool keepRotation;
     [SerializeField] private Vector3 spawnOffset;
 
     private GameManager gameManager;
@@ -19,20 +24,33 @@ public class EnemySpawner : MonoBehaviour
 
     private void Update()
     {
-        if(currentSpawnDelay > 0)
+        if (!gameManager.gameStarted) return;
+
+        if(beginSpawningDelay > 0)
         {
-            currentSpawnDelay -= Time.deltaTime;
+            beginSpawningDelay -= Time.deltaTime;
+            return;
         }
-        else
+
+        if (spawningDuration > 0)
         {
-            SpawnEnemy();
-            currentSpawnDelay = spawnDelay;
+            spawningDuration -= Time.deltaTime;
+            if (currentSpawnDelay > 0)
+            {
+                currentSpawnDelay -= Time.deltaTime;
+            }
+            else
+            {
+                SpawnEnemy();
+                currentSpawnDelay = spawnDelay;
+            }
         }
     }
 
     private void SpawnEnemy()
     {
         int rndSpawn = Random.Range(0, gameManager.wireframeLine.Length);
-        gameManager.SpawnObjectOnMap(enemy[0], rndSpawn, spawnOffset, keepRotation);
+        int rndEnemy = Random.Range(0, enemy.Length);
+        gameManager.SpawnObjectOnMap(enemy[rndEnemy], rndSpawn, spawnOffset, keepRotation);
     }
 }

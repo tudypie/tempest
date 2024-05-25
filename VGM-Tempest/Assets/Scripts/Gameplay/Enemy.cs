@@ -4,15 +4,14 @@ public class Enemy : MovingObject
 {
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (other.TryGetComponent(out PlayerManager playerManager))
         {
-            Debug.Log(other.gameObject.name + " was hit");
+            GameManager.Instance.scoreManager.AddScore(playerManager.playerNumber, -10);
             Destroy(gameObject);
         }
 
         if (other.gameObject.CompareTag("FrontBarrier"))
         {
-            //AudioManager.Instance.PlaySound(AudioManager.Instance.audioSource, AudioManager.Instance.explosion);
             Destroy(gameObject);
         }
     }

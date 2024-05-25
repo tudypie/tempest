@@ -5,14 +5,12 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float moveDelay = 0.05f;
     private float currentMoveDelay = 0;
-    private int currentPointIndex;
+    public int currentPointIndex;
     private int lastPointIndex;
     private float horizontal;
 
     private PlayerManager playerManager;
     private GameManager gameManager;
-
-    public int CurrentPointIndex { get { return currentPointIndex; } }
 
     public void OnMove(InputAction.CallbackContext context)
     {
@@ -28,7 +26,6 @@ public class PlayerMovement : MonoBehaviour
     private void Start()
     {
         gameManager = GameManager.Instance;
-        SetPlayerOnWireframeLine();
     }
 
     private void Update()
@@ -75,7 +72,7 @@ public class PlayerMovement : MonoBehaviour
         currentMoveDelay = moveDelay;
     }
 
-    private void SetPlayerOnWireframeLine()
+    public void SetPlayerOnWireframeLine()
     {
         transform.position = gameManager.wireframeLine[currentPointIndex].position;
         transform.rotation = gameManager.wireframeLine[currentPointIndex].rotation;

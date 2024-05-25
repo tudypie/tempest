@@ -1,14 +1,39 @@
+using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public int playersInGame = 0;
-    public Material wireframeMaterial;
-    public Material[] playerMaterial;
-    public Material[] playerLineMaterial;
+    [Serializable]
+    public struct GameLevel
+    {
+        public string name;
+        public float duration;
+        public bool bossfight;
+    }
+
+    [Header("References")]
     public Transform[] wireframeLine;
+    public Material wireframeMaterial;
+    [SerializeField] private Material[] playerMaterial;
+    [SerializeField] private Material[] playerLineMaterial;
+    [SerializeField] private GameObject[] playerJoinText;
+    [SerializeField] private GameObject startCanvas;
+    [SerializeField] private GameObject playerCanvas;
+    [SerializeField] private Text endLevelText;
+
+    [Header("Game Settings")]
+    [SerializeField] private GameLevel[] levels;
+    [SerializeField] [TextArea(5, 10)] 
+    private string[] endLevelMessages;
+    [SerializeField] private float typeWriterEffectDelay = 0.04f;
+    [SerializeField] private float currentLevelDuration;
+    [SerializeField] private int currentLevelCount;
+    [SerializeField] int playersInGame = 0;
+    [SerializeField] private bool finishedTypeWriterEffect = false;
+    public bool gameStarted = false;
 
     [HideInInspector] public AudioManager audioManager;
     [HideInInspector] public ScoreManager scoreManager;
@@ -30,13 +55,55 @@ public class GameManager : MonoBehaviour
 
         audioManager = GetComponent<AudioManager>();
         scoreManager = GetComponent<ScoreManager>();
-        textManager = GetComponent<TextManager>();
+        textManager = TextManager.Instance;
+
+        currentLevelDuration = levels[currentLevelCount].duration;
+    }
+
+    private void Update()
+    {
+        if (!gameStarted) return;
+
+        if(currentLevelDuration > 0)
+        {
+            currentLevelDuration -= Time.deltaTime;
+        }
+        else if (!levels[currentLevelCount].bossfight)
+        {
+            NextLevel();
+        }
+    }
+
+    public void NextLevel()
+    {
+        if (currentLevelCount < levels.Length - 1)
+        {
+            currentLevelCount++;
+        }
+        else
+        {
+            return;
+        }
+        currentLevelDuration = levels[currentLevelCount].duration;
+        StartCoroutine(NextLevel(levels[currentLevelCount]));
     }
 
     public void OnPlayerJoin(PlayerManager player)
     {
+        if (currentLevelCount == 0 && playersInGame == 0)
+        {
+            startCanvas.SetActive(false);
+            playerCanvas.SetActive(true);
+            Camera.main.GetComponent<Animator>().Play("BeginLevel");
+            textManager.StartCoroutine(textManager.SpawningTexts());
+            gameStarted = true;          
+        }
+
+        playerJoinText[playersInGame].SetActive(false);
         player.playerNumber = playersInGame;
         player.playerMaterial = playerMaterial[playersInGame];
+        player.movement.currentPointIndex = playersInGame == 0 ? 14 : 6;
+        player.movement.SetPlayerOnWireframeLine();
         playersInGame++;
     }
 
@@ -58,5 +125,34 @@ public class GameManager : MonoBehaviour
         spawnedObject.transform.Rotate(rotationOffset);
         spawnedObject.transform.localScale = objectScale;
         return spawnedObject;
+    }
+
+    private IEnumerator NextLevel(GameLevel level)
+    {
+        Camera.main.GetComponent<Animator>().Play("NextLevel");
+        yield return new WaitForSeconds(2f);
+
+        finishedTypeWriterEffect = false;
+        StartCoroutine(TypeWriterEffect(endLevelMessages[Array.IndexOf(levels, level)]));
+        while(!finishedTypeWriterEffect)
+            yield return null;
+
+        Camera.main.GetComponent<Animator>().Play("NextLevel2");
+        yield return new WaitForSeconds(1f);
+        endLevelText.text = string.Empty;
+        SceneManager.LoadScene(level.name);
+        Camera.main.GetComponent<Animator>().Play("BeginLevel");
+    }
+
+    private IEnumerator TypeWriterEffect(string fullText)
+    {
+        string currentText;
+        for (int i = 0; i < fullText.Length + 1; i++)
+        {
+            currentText = fullText.Substring(0, i);
+            endLevelText.text = currentText;
+            yield return new WaitForSeconds(typeWriterEffectDelay);
+        }
+        finishedTypeWriterEffect = true;
     }
 }

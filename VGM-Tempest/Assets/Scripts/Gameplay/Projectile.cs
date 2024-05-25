@@ -37,11 +37,6 @@ public class Projectile : MovingObject
             boss.TakeDamage(damage);
         }
 
-        if (other.gameObject.CompareTag("Player"))
-        {
-            Debug.Log(other.gameObject.name + " was hit");
-        }
-
         if (other.gameObject.CompareTag("BackBarrier"))
         {
             Destroy(gameObject);
