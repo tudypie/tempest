@@ -117,7 +117,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcbb6c9096426d74e85e983d5640bd69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveDelay: 0.05
+  moveDelay: 0.07
+  currentPointIndex: 0
 --- !u!114 &4202955783768081578
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -130,7 +131,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4a9b81a41849e540b1b08a4793dd6d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shootDelay: 0.05
+  shootDelay: 0.1
   projectile: {fileID: 7620357718572601899, guid: 05e4a62545db2be4eb52eb9fe246b8d4,
     type: 3}
   spawnOffset: {x: 0, y: 0, z: 0}

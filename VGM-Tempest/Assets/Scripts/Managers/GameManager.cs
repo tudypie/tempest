@@ -19,7 +19,6 @@ public class GameManager : MonoBehaviour
     public Material wireframeMaterial;
     [SerializeField] private Material[] playerMaterial;
     [SerializeField] private Material[] playerLineMaterial;
-    [SerializeField] private GameObject[] playerJoinText;
     [SerializeField] private GameObject startCanvas;
     [SerializeField] private GameObject playerCanvas;
     [SerializeField] private Text endLevelText;
@@ -103,7 +102,6 @@ public class GameManager : MonoBehaviour
             gameStarted = true;          
         }
 
-        playerJoinText[playersInGame].SetActive(false);
         player.playerNumber = playersInGame;
         player.playerMaterial = playerMaterial[playersInGame];
         player.movement.currentPointIndex = playersInGame == 0 ? 14 : 6;
@@ -141,10 +139,12 @@ public class GameManager : MonoBehaviour
         while(!finishedTypeWriterEffect)
             yield return null;
 
+        yield return new WaitForSeconds(2f);
         Camera.main.GetComponent<Animator>().Play("NextLevel2");
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(3f);
         endLevelText.text = string.Empty;
         SceneManager.LoadScene(level.name);
+        yield return new WaitForSeconds(2f);
         Camera.main.GetComponent<Animator>().Play("BeginLevel");
     }
 
