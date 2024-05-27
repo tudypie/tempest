@@ -46,9 +46,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy:
   - {fileID: 1858356101863002716, guid: deb710a93a24aaa4da534ad5a643c697, type: 3}
-  - {fileID: 2370536737724576690, guid: ade822af653755142b7ec25632c6eaf2, type: 3}
   beginSpawningDelay: 3
   spawningDuration: 5
   spawnDelay: 0.5
   keepRotation: 0
   spawnOffset: {x: 0, y: 0, z: 27}
+  rotationOffset: {x: 0, y: 0, z: 0}

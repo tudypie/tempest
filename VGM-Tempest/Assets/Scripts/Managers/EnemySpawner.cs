@@ -16,7 +16,16 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private Vector3 spawnOffset;
     [SerializeField] private Vector3 rotationOffset;
 
+    public bool CanSpawn { get; set; } = true;
+
     private GameManager gameManager;
+
+    public static EnemySpawner instance;
+
+    private void Awake()
+    {
+        instance = this;
+    }
 
     private void Start()
     {
@@ -25,7 +34,7 @@ public class EnemySpawner : MonoBehaviour
 
     private void Update()
     {
-        if (!gameManager.gameStarted) return;
+        if (!gameManager.gameStarted || !CanSpawn) return;
 
         if(beginSpawningDelay > 0)
         {

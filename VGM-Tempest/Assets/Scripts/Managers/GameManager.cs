@@ -146,6 +146,7 @@ public class GameManager : MonoBehaviour
     private IEnumerator NextLevel(GameLevel level)
     {
         Camera.main.GetComponent<Animator>().Play("NextLevel");
+        EnemySpawner.instance.CanSpawn = false;
         yield return new WaitForSeconds(2f);
 
         finishedTypeWriterEffect = false;

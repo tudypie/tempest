@@ -185,7 +185,7 @@ PrefabInstance:
     - target: {fileID: 9085777190870978360, guid: d4fd649aba7106e4da091a31afa5afc3,
         type: 3}
       propertyPath: textMessages.Array.size
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9085777190870978360, guid: d4fd649aba7106e4da091a31afa5afc3,
         type: 3}
