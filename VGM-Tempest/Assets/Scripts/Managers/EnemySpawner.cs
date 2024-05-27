@@ -14,6 +14,7 @@ public class EnemySpawner : MonoBehaviour
     [Header("Enemy Settings")]
     [SerializeField] private bool keepRotation;
     [SerializeField] private Vector3 spawnOffset;
+    [SerializeField] private Vector3 rotationOffset;
 
     private GameManager gameManager;
 
@@ -49,8 +50,8 @@ public class EnemySpawner : MonoBehaviour
 
     private void SpawnEnemy()
     {
-        int rndSpawn = Random.Range(0, gameManager.wireframeLine.Length);
+        int rndLine = Random.Range(0, gameManager.wireframeLine.Length);
         int rndEnemy = Random.Range(0, enemy.Length);
-        gameManager.SpawnObjectOnMap(enemy[rndEnemy], rndSpawn, spawnOffset, keepRotation);
+        gameManager.SpawnObjectOnMap(enemy[rndEnemy], rndLine, spawnOffset, keepRotation);
     }
 }

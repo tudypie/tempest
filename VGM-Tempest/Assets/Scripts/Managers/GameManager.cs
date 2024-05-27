@@ -129,6 +129,20 @@ public class GameManager : MonoBehaviour
         return spawnedObject;
     }
 
+    /*public GameObject SpawnObjectOnMap(GameObject objectToSpawn, int wireframeLineIndex, Vector3 spawnOffset, int rotateOnAxis)
+    {
+        Transform line = wireframeLine[wireframeLineIndex];
+        GameObject spawnedObject = Instantiate(objectToSpawn, wireframeLine[wireframeLineIndex].position + spawnOffset, Quaternion.identity);
+
+        spawnedObject.transform.Rotate(new Vector3(
+            rotateOnAxis == 0 ? line.position.x : 0,
+            rotateOnAxis == 1 ? line.position.y : 0,
+            rotateOnAxis == 2 ? line.position.z : 0
+            ));
+
+        return spawnedObject;
+    }*/
+
     private IEnumerator NextLevel(GameLevel level)
     {
         Camera.main.GetComponent<Animator>().Play("NextLevel");

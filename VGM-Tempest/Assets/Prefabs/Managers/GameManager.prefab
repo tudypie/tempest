@@ -1896,19 +1896,19 @@ MonoBehaviour:
   playerLineMaterial:
   - {fileID: 2100000, guid: a7e445ccb6b85984991d580f058c6ebe, type: 2}
   - {fileID: 2100000, guid: 97f02f9071336b149b55265cccf4c1c0, type: 2}
-  playerJoinText:
-  - {fileID: 5518068158009596273}
-  - {fileID: 0}
   startCanvas: {fileID: 434507083504609701}
   playerCanvas: {fileID: 6434711071138576339}
   endLevelText: {fileID: 3630726244772393006}
   levels:
   - name: Level1
-    duration: 10
+    duration: 35
     bossfight: 0
   - name: Level2
     duration: 0
     bossfight: 1
+  - name: Level3
+    duration: 60
+    bossfight: 0
   endLevelMessages:
   - 'help us open video game museum
 
