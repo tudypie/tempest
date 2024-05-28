@@ -24,7 +24,6 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int playersInGame = 0;
     [SerializeField] private int currentLevel;
     [SerializeField] private float levelDuration;
-    [SerializeField] private bool levelStarted;
 
     public bool gameStarted = false;
 
@@ -101,7 +100,6 @@ public class GameManager : MonoBehaviour
         mainCamera.GetComponent<Animator>().Play("BeginLevel");
         levelDuration = levels[currentLevel].duration;
         enemySpawner.spawningDuration = levelDuration - 5;
-        levelStarted = true;
     }
 
     private void EndGame()
@@ -114,7 +112,6 @@ public class GameManager : MonoBehaviour
         if (currentLevel < levels.Length - 1)
         {
             currentLevel++;
-            levelStarted = false;
         }
         else
         {

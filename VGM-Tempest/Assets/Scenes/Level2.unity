@@ -400,7 +400,7 @@ PrefabInstance:
     - target: {fileID: 7665138859101526300, guid: 35c8035305c204b4f921ddcc3b964911,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8995826328783584267, guid: 35c8035305c204b4f921ddcc3b964911,
         type: 3}
@@ -575,7 +575,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 7.4843755, y: 9.016136, z: 2.02}
+  m_Size: {x: 10, y: 11.44, z: 2.02}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2129588264
 GameObject:
