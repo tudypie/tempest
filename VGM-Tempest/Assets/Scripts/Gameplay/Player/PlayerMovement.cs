@@ -4,9 +4,9 @@ using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float moveDelay = 0.05f;
-    private float currentMoveDelay = 0;
-    public int currentPointIndex;
-    private int lastPointIndex;
+    private float currentMoveDelay;
+    public int currentLine;
+    private int lastLine;
     private float horizontal;
 
     private PlayerManager playerManager;
@@ -26,11 +26,12 @@ public class PlayerMovement : MonoBehaviour
     private void Start()
     {
         gameManager = GameManager.Instance;
+        SetPlayerOnWireframeLine();
     }
 
     private void Update()
     {
-        gameManager.SetLineColor(currentPointIndex, playerManager.playerNumber);
+        gameManager.SetPlayerLineColor(currentLine, playerManager.playerNumber);
 
         if (currentMoveDelay > 0)
         {
@@ -50,11 +51,11 @@ public class PlayerMovement : MonoBehaviour
 
     private void MoveRight()
     {
-        lastPointIndex = currentPointIndex;
-        currentPointIndex++;
+        lastLine = currentLine;
+        currentLine++;
 
-        if (currentPointIndex >= gameManager.wireframeLine.Length)
-            currentPointIndex = 0;
+        if (currentLine >= gameManager.wireframe.lines.Length)
+            currentLine = 0;
 
         SetPlayerOnWireframeLine();
 
@@ -63,19 +64,19 @@ public class PlayerMovement : MonoBehaviour
 
     private void MoveLeft()
     {
-        lastPointIndex = currentPointIndex;
-        currentPointIndex--;
+        lastLine = currentLine;
+        currentLine--;
 
-        if (currentPointIndex < 0)
-            currentPointIndex = gameManager.wireframeLine.Length - 1;
+        if (currentLine < 0)
+            currentLine = gameManager.wireframe.lines.Length - 1;
         SetPlayerOnWireframeLine();
         currentMoveDelay = moveDelay;
     }
 
     public void SetPlayerOnWireframeLine()
     {
-        transform.position = gameManager.wireframeLine[currentPointIndex].position;
-        transform.rotation = gameManager.wireframeLine[currentPointIndex].rotation;
-        gameManager.wireframeLine[lastPointIndex].parent.GetComponent<Renderer>().material = gameManager.wireframeMaterial;
+        transform.position = gameManager.wireframe.lines[currentLine].position;
+        transform.rotation = gameManager.wireframe.lines[currentLine].rotation;
+        gameManager.wireframe.ResetLineMaterial(lastLine);
     }
 }

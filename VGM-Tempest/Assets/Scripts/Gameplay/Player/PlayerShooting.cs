@@ -42,7 +42,7 @@ public class PlayerShooting : MonoBehaviour
 
     private void Shoot()
     {
-        GameObject newProjectile = gameManager.SpawnObjectOnMap(projectile, playerManager.movement.currentPointIndex, spawnOffset);
+        GameObject newProjectile = gameManager.SpawnObjectOnMap(projectile, playerManager.movement.currentLine, spawnOffset);
         newProjectile.GetComponentInChildren<Renderer>().material = playerManager.playerMaterial;
         newProjectile.GetComponent<Projectile>().playerNumber = playerManager.playerNumber;
         gameManager.audioManager.PlaySound(playerManager.audioSource, gameManager.audioManager.shoot);
