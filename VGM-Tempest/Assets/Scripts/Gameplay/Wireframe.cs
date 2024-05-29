@@ -21,11 +21,17 @@ public class Wireframe : MonoBehaviour
 
     public void SetLineMaterial(int index, Material material)
     {
-        lines[index].parent.GetComponent<Renderer>().material = material;
+        if (index < lines.Length)
+        {
+            lines[index].parent.GetComponent<Renderer>().material = material;
+        }
     }
 
     public void ResetLineMaterial(int index)
     {
-        lines[index].parent.GetComponent<Renderer>().material = material;
+        if(index < lines.Length)
+        {
+            lines[index].parent.GetComponent<Renderer>().material = material;
+        }
     }
 }

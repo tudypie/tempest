@@ -14,11 +14,11 @@ doom level
 	[x] boss sprite turns red on hit 
 tetris level
 	[x] music
-	[-] rectangular wireframe
+	[x] rectangular wireframe
 	[-] boss hit effect
 
 [x] add 100 score on boss defeated
-	[-] check if second player is in game
+	[x] check if second player is in game
 [x] restrict movement when level ends
 [-] recreate default tempest enemy models
-[-] destroy all enemies on 
+[x] destroy all enemies when level end

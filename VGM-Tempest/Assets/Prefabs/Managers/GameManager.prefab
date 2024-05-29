@@ -1027,15 +1027,15 @@ MonoBehaviour:
   - {fileID: 2100000, guid: a7e445ccb6b85984991d580f058c6ebe, type: 2}
   - {fileID: 2100000, guid: 97f02f9071336b149b55265cccf4c1c0, type: 2}
   levels:
-  - name: Level1
+  - name: StartLevel
     duration: 40
     hasBossfight: 0
-  - name: Level2
-    duration: 0
-    hasBossfight: 1
-  - name: Level3
+  - name: Tetris
     duration: 60
     hasBossfight: 0
+  - name: Doom
+    duration: 0
+    hasBossfight: 1
   numOfPlayers: 0
   currentLevel: 0
   levelDuration: 0

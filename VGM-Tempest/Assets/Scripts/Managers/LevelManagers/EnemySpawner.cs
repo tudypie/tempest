@@ -1,4 +1,6 @@
+using NUnit.Framework;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
@@ -19,6 +21,8 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private bool invertRotation;
     [SerializeField] private Vector3 spawnOffset;
     [SerializeField] private Vector3 rotationOffset;
+
+    private List<GameObject> spawnedEnemies = new List<GameObject>();
 
     private GameManager gameManager;
     private Wireframe wireframe;
@@ -69,12 +73,20 @@ public class EnemySpawner : MonoBehaviour
     {
         int rndLine = Random.Range(0, wireframe.lines.Length);
         int rndEnemy = Random.Range(0, enemies.Length);
-        gameManager.SpawnObjectOnMap(enemies[rndEnemy], rndLine, spawnOffset, keepRotation, invertRotation);
+        spawnedEnemies.Add(gameManager.SpawnObjectOnMap(enemies[rndEnemy], rndLine, spawnOffset, keepRotation, invertRotation));
+    }
+
+    public void DestroyAllEnemies()
+    {
+        foreach(GameObject enemy in spawnedEnemies) {
+            Destroy(enemy);
+        }
+        spawnedEnemies.Clear();
     }
 
     private IEnumerator SpawningSequence()
     {
-        while(spawningDuration > 0 || gameManager.LevelHasBossfight)
+        while(gameManager.ongoingLevel && (spawningDuration > 0 || gameManager.LevelHasBossfight))
         {
             yield return new WaitForSeconds(currentSpawnTime);
             SpawnEnemy();

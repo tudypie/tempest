@@ -41,6 +41,8 @@ public class GameManager : MonoBehaviour
 
     public bool LevelHasBossfight { get { return levels[currentLevel].hasBossfight; } }
 
+    public bool TwoPlayersInGame { get { return numOfPlayers == 2; } }
+
     public static GameManager Instance { get; private set; }
 
     private void Awake()
@@ -184,6 +186,7 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator LevelTransition(int level)
     {
+        enemySpawner.DestroyAllEnemies();
         mainCamera.GetComponent<Animator>().Play("NextLevel");
         yield return new WaitForSeconds(2f);
 
@@ -199,6 +202,13 @@ public class GameManager : MonoBehaviour
         {
             SceneManager.LoadScene(levels[level].name);
             yield return new WaitForSeconds(1f);
+            playersInGame[0].movement.currentLine = Wireframe.Instance.lines.Length / 2;
+            playersInGame[0].movement.SetPlayerOnWireframeLine();
+            if (playersInGame[1] != null)
+            {
+                playersInGame[1].movement.currentLine = Wireframe.Instance.lines.Length / 2;
+                playersInGame[1].movement.SetPlayerOnWireframeLine();
+            }
             StartLevel();
         }
         else

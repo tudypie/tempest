@@ -45,7 +45,7 @@ public class TextMessageSpawner : MonoBehaviour
     private void Start()
     {
         gameManager = GameManager.Instance;
-        if (gameManager.ongoingGame)
+        if (gameManager.ongoingGame && textMessages != null)
         {
             StartCoroutine(SpawningSequence());
         }

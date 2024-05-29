@@ -49,7 +49,7 @@ public class UIManager : MonoBehaviour
         UpdatePlayerScoreText(0, (int)displayedScore0);
         UpdatePlayerScoreText(1, (int)displayedScore1);
 
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(4f);
         GameManager.Instance.RestartGame();
     }
 }
