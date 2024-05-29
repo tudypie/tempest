@@ -1039,7 +1039,7 @@ MonoBehaviour:
   playersInGame: 0
   currentLevel: 0
   levelDuration: 0
-  levelStarted: 0
+  gameStarted: 0
 --- !u!114 &2201876889416331454
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1052,11 +1052,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a4b1c574f113c246b445ff80aaea1ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score:
-  - scoreValue: 0
-    scoreText: {fileID: 1006260461382745860}
-  - scoreValue: 0
-    scoreText: {fileID: 7677564942952457087}
+  score: 0000000000000000
+  totalScore: 0
 --- !u!114 &7405788054029994251
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1087,6 +1084,10 @@ MonoBehaviour:
   startGameCanvas: {fileID: 434507083504609701}
   playerCanvas: {fileID: 6434711071138576339}
   endGameCanvas: {fileID: 5826793740149875794}
+  playerScoresText:
+  - {fileID: 1006260461382745860}
+  - {fileID: 7677564942952457087}
+  totalScoreText: {fileID: 5486700693083384822}
 --- !u!114 &1263595637142313053
 MonoBehaviour:
   m_ObjectHideFlags: 0

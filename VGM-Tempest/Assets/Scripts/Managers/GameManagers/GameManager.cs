@@ -26,6 +26,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private float levelDuration;
 
     public bool gameStarted = false;
+    public bool levelStarted = false;
 
     private TextMessageSpawner textSpawner;
     private EnemySpawner enemySpawner;
@@ -70,7 +71,7 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (!gameStarted) return;
+        if (!gameStarted || !levelStarted) return;
 
         if (levelDuration > 0)
         {
@@ -100,25 +101,20 @@ public class GameManager : MonoBehaviour
         mainCamera.GetComponent<Animator>().Play("BeginLevel");
         levelDuration = levels[currentLevel].duration;
         enemySpawner.spawningDuration = levelDuration - 5;
+        levelStarted = true;
     }
 
     private void EndGame()
     {
-
+        uiManager.ActivateEndCanvas(true);
+        scoreManager.CalculateTotalScore();
     }
 
     public void NextLevel()
     {
-        if (currentLevel < levels.Length - 1)
-        {
-            currentLevel++;
-        }
-        else
-        {
-            EndGame();
-            return;
-        }
-        StartCoroutine(LevelTransition(levels[currentLevel]));
+        levelStarted = false;
+        currentLevel++;
+        StartCoroutine(LevelTransition(currentLevel));
     }
 
     public void OnPlayerJoin(PlayerManager player)
@@ -170,7 +166,7 @@ public class GameManager : MonoBehaviour
         return spawnedObject;
     }*/
 
-    private IEnumerator LevelTransition(GameLevel level)
+    private IEnumerator LevelTransition(int level)
     {
         mainCamera.GetComponent<Animator>().Play("NextLevel");
         yield return new WaitForSeconds(2f);
@@ -183,9 +179,18 @@ public class GameManager : MonoBehaviour
         mainCamera.GetComponent<Animator>().Play("NextLevel2");
         yield return new WaitForSeconds(3f);
 
-        SceneManager.LoadScene(level.name);
+        if(level < levels.Length)
+        {
+            SceneManager.LoadScene(levels[level].name);
+            yield return new WaitForSeconds(1f);
+            StartLevel();
+        }
+        else
+        {
+            SceneManager.LoadScene("EndScreen");
+            yield return new WaitForSeconds(1f);
+            EndGame();
+        }
 
-        yield return new WaitForSeconds(1f);
-        StartLevel();
     }
 }

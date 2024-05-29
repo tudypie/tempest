@@ -1,0 +1,19 @@
+[x] end game screen with total score
+	[x] animation
+	[-] register name and score to leaderboard
+	[-] update and show leaderboard
+[-] visual fx
+	[-] enemy explosion effect
+	[-] projectile spawn effect
+[-] doom level
+	[-] doom music
+	[-] enemy hit sfx
+	[-] doom enemies sprites
+	[x] boss sprite turns red on hit 
+[-] tetris level
+	[-] music
+	[-] rectangular wireframe
+	[-] boss hit effect
+
+[-] add 100 score on boss defeated
+[-] restrict movement when level ends

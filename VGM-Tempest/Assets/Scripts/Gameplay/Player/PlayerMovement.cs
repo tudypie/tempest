@@ -31,6 +31,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
+        if (!gameManager.levelStarted) return;
+
         gameManager.SetPlayerLineColor(currentLine, playerManager.playerNumber);
 
         if (currentMoveDelay > 0)

@@ -15,7 +15,7 @@ public class PlayerShooting : MonoBehaviour
     {
         if (context.performed)
         {
-            if (currentShootDelay > 0 || gameManager == null) return;
+            if (currentShootDelay > 0 || gameManager == null || !gameManager.levelStarted) return;
             Shoot();
             currentShootDelay = shootDelay;
         }
@@ -34,10 +34,7 @@ public class PlayerShooting : MonoBehaviour
     private void Update()
     {
         if (currentShootDelay > 0)
-        {
             currentShootDelay -= Time.deltaTime;
-            return;
-        }
     }
 
     private void Shoot()
