@@ -16,6 +16,7 @@ public class EnemySpawner : MonoBehaviour
 
     [Header("Enemy Settings")]
     [SerializeField] private bool keepRotation;
+    [SerializeField] private bool invertRotation;
     [SerializeField] private Vector3 spawnOffset;
     [SerializeField] private Vector3 rotationOffset;
 
@@ -46,7 +47,7 @@ public class EnemySpawner : MonoBehaviour
 
     private void Update()
     {
-        if (!gameManager.gameStarted) return;
+        if (!gameManager.ongoingGame) return;
 
         if(beginSpawningDelay > 0)
         {
@@ -68,7 +69,7 @@ public class EnemySpawner : MonoBehaviour
     {
         int rndLine = Random.Range(0, wireframe.lines.Length);
         int rndEnemy = Random.Range(0, enemies.Length);
-        gameManager.SpawnObjectOnMap(enemies[rndEnemy], rndLine, spawnOffset, keepRotation);
+        gameManager.SpawnObjectOnMap(enemies[rndEnemy], rndLine, spawnOffset, keepRotation, invertRotation);
     }
 
     private IEnumerator SpawningSequence()

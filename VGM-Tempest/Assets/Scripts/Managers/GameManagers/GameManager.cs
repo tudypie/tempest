@@ -21,12 +21,14 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameLevel[] levels;
 
     [Header("Debug")]
-    [SerializeField] private int playersInGame = 0;
+    [SerializeField] private int numOfPlayers = 0;
     [SerializeField] private int currentLevel;
     [SerializeField] private float levelDuration;
 
-    public bool gameStarted = false;
-    public bool levelStarted = false;
+    [SerializeField] private PlayerManager[] playersInGame = new PlayerManager[2];
+
+    public bool ongoingGame = false;
+    public bool ongoingLevel = false;
 
     private TextMessageSpawner textSpawner;
     private EnemySpawner enemySpawner;
@@ -45,7 +47,7 @@ public class GameManager : MonoBehaviour
     {
         if (Instance != null && Instance != this)
         {
-            Destroy(this);
+            Destroy(gameObject);
         }
         else
         {
@@ -65,13 +67,13 @@ public class GameManager : MonoBehaviour
         enemySpawner = EnemySpawner.Instance;
         mainCamera = Camera.main;
 
-        if (gameStarted)
+        if (ongoingGame)
             StartGame();
     }
 
     private void Update()
     {
-        if (!gameStarted || !levelStarted) return;
+        if (!ongoingGame || !ongoingLevel) return;
 
         if (levelDuration > 0)
         {
@@ -87,7 +89,7 @@ public class GameManager : MonoBehaviour
     {
         uiManager.ActivateStartCanvas(false);
         uiManager.ActivatePlayerCanvas(true);
-        gameStarted = true;
+        ongoingGame = true;
         StartLevel();
     }
 
@@ -101,30 +103,61 @@ public class GameManager : MonoBehaviour
         mainCamera.GetComponent<Animator>().Play("BeginLevel");
         levelDuration = levels[currentLevel].duration;
         enemySpawner.spawningDuration = levelDuration - 5;
-        levelStarted = true;
+        ongoingLevel = true;
     }
 
     private void EndGame()
     {
         uiManager.ActivateEndCanvas(true);
         scoreManager.CalculateTotalScore();
+        ongoingGame = false;
     }
+
+    public void RestartGame()
+    {
+        SceneManager.LoadScene(0);
+
+        StartCoroutine(DelayedRemovePlayer());
+
+        numOfPlayers = 0;
+        currentLevel = 0;
+        scoreManager.ResetScore();
+
+        uiManager.ActivateEndCanvas(false);
+        uiManager.ActivatePlayerCanvas(false);
+        uiManager.ActivateStartCanvas(true);
+
+        wireframe = Wireframe.Instance;
+        textSpawner = TextMessageSpawner.Instance;
+        enemySpawner = EnemySpawner.Instance;
+        mainCamera = Camera.main;
+    }
+    private IEnumerator DelayedRemovePlayer()
+    {
+        yield return new WaitForEndOfFrame();
+        yield return new WaitForEndOfFrame();
+        Destroy(playersInGame[0].gameObject);
+        if(playersInGame[1] != null) Destroy(playersInGame[1].gameObject);
+        yield return null;
+    }
+
 
     public void NextLevel()
     {
-        levelStarted = false;
+        ongoingLevel = false;
         currentLevel++;
         StartCoroutine(LevelTransition(currentLevel));
     }
 
     public void OnPlayerJoin(PlayerManager player)
     {
-        if (currentLevel == 0 && playersInGame == 0)
+        if (currentLevel == 0 && numOfPlayers == 0)
             StartGame();
 
-        player.playerNumber = playersInGame;
-        player.playerMaterial = playerMaterial[playersInGame];
-        playersInGame++;
+        playersInGame[numOfPlayers] = player;
+        player.playerNumber = numOfPlayers;
+        player.playerMaterial = playerMaterial[numOfPlayers];
+        numOfPlayers++;
     }
 
     public void SetPlayerLineColor(int index, int player)
@@ -133,38 +166,21 @@ public class GameManager : MonoBehaviour
             wireframe.SetLineMaterial(index, playerLineMaterial[player]);
     }
 
-    public GameObject SpawnObjectOnMap(GameObject objectToSpawn, int wireframeLineIndex, Vector3 spawnOffset, bool keepRotation = false)
+    public GameObject SpawnObjectOnMap(GameObject objectToSpawn, int wireframeLineIndex, Vector3 spawnOffset, bool keepRotation = false, bool invertRotation = false)
     {
         if (wireframe == null) return null;
 
-        return Instantiate(objectToSpawn, wireframe.lines[wireframeLineIndex].position + spawnOffset, 
-            keepRotation ? Quaternion.identity : wireframe.lines[wireframeLineIndex].rotation);
-    }
+        if(invertRotation && (wireframeLineIndex == 5 || wireframeLineIndex == 14)) 
+            keepRotation = true;
 
-    public GameObject SpawnObjectOnMap(GameObject objectToSpawn, int wireframeLineIndex, Vector3 spawnOffset, Vector3 rotationOffset, Vector3 objectScale, bool keepRotation = false)
-    {
-        if (wireframe == null) return null;
+        Transform spawnedObject = Instantiate(objectToSpawn, wireframe.lines[wireframeLineIndex].position + spawnOffset, 
+            keepRotation ? Quaternion.identity : wireframe.lines[wireframeLineIndex].rotation).transform;
 
-        GameObject spawnedObject = Instantiate(objectToSpawn, wireframe.lines[wireframeLineIndex].position + spawnOffset,
-            keepRotation ? Quaternion.identity : wireframe.lines[wireframeLineIndex].rotation);
-        spawnedObject.transform.Rotate(rotationOffset);
-        spawnedObject.transform.localScale = objectScale;
-        return spawnedObject;
-    }
+        if(invertRotation && wireframeLineIndex > 5 && wireframeLineIndex < 14)
+            spawnedObject.localScale =  new Vector3(spawnedObject.localScale.x, -spawnedObject.localScale.y, spawnedObject.localScale.z);
 
-    /*public GameObject SpawnObjectOnMap(GameObject objectToSpawn, int wireframeLineIndex, Vector3 spawnOffset, int rotateOnAxis)
-    {
-        Transform line = wireframeLine[wireframeLineIndex];
-        GameObject spawnedObject = Instantiate(objectToSpawn, wireframeLine[wireframeLineIndex].position + spawnOffset, Quaternion.identity);
-
-        spawnedObject.transform.Rotate(new Vector3(
-            rotateOnAxis == 0 ? line.position.x : 0,
-            rotateOnAxis == 1 ? line.position.y : 0,
-            rotateOnAxis == 2 ? line.position.z : 0
-            ));
-
-        return spawnedObject;
-    }*/
+        return spawnedObject.gameObject;
+     }
 
     private IEnumerator LevelTransition(int level)
     {

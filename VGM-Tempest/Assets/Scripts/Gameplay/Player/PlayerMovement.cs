@@ -31,7 +31,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        if (!gameManager.levelStarted) return;
+        if (!gameManager.ongoingLevel) return;
 
         gameManager.SetPlayerLineColor(currentLine, playerManager.playerNumber);
 
@@ -77,8 +77,8 @@ public class PlayerMovement : MonoBehaviour
 
     public void SetPlayerOnWireframeLine()
     {
-        transform.position = gameManager.wireframe.lines[currentLine].position;
-        transform.rotation = gameManager.wireframe.lines[currentLine].rotation;
-        gameManager.wireframe.ResetLineMaterial(lastLine);
+        transform.position = Wireframe.Instance.lines[currentLine].position;
+        transform.rotation = Wireframe.Instance.lines[currentLine].rotation;
+        Wireframe.Instance.ResetLineMaterial(lastLine);
     }
 }

@@ -25,7 +25,7 @@ public class Projectile : MovingObject
         if(other.TryGetComponent(out Enemy enemy))
         {
             gameManager.scoreManager.AddScore(playerNumber);
-            gameManager.audioManager.PlaySoundWithRandomPitch(audioSource, gameManager.audioManager.explosion, 60, 180);
+            gameManager.audioManager.PlaySoundWithRandomPitch(audioSource, enemy.deathSound, 60, 180);
             Destroy(other.gameObject);
             meshRenderer.enabled = false;
             speed = 0;

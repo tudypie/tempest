@@ -1,19 +1,24 @@
-[x] end game screen with total score
+end game screen with total score
 	[x] animation
-	[-] register name and score to leaderboard
-	[-] update and show leaderboard
-[-] visual fx
+	[x] script
+	[-] leaderboard
+visual fx
 	[-] enemy explosion effect
 	[-] projectile spawn effect
-[-] doom level
-	[-] doom music
-	[-] enemy hit sfx
-	[-] doom enemies sprites
+	[-] feedback when score changes (+1; -10)
+doom level
+	[x] doom music
+	[x] enemy hit sfx
+	[x] doom enemies sprites
+	[-] enemies animations
 	[x] boss sprite turns red on hit 
-[-] tetris level
-	[-] music
+tetris level
+	[x] music
 	[-] rectangular wireframe
 	[-] boss hit effect
 
-[-] add 100 score on boss defeated
-[-] restrict movement when level ends
+[x] add 100 score on boss defeated
+	[-] check if second player is in game
+[x] restrict movement when level ends
+[-] recreate default tempest enemy models
+[-] destroy all enemies on 

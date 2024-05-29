@@ -15,7 +15,7 @@ public class PlayerShooting : MonoBehaviour
     {
         if (context.performed)
         {
-            if (currentShootDelay > 0 || gameManager == null || !gameManager.levelStarted) return;
+            if (currentShootDelay > 0 || gameManager == null || !gameManager.ongoingLevel) return;
             Shoot();
             currentShootDelay = shootDelay;
         }

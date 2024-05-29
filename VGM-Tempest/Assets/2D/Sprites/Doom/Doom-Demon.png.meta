@@ -1,0 +1,1794 @@
+fileFormatVersion: 2
+guid: e77c00ba6dc98f245bc8268a061e2fab
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Doom-Demon_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 523
+        width: 37
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 863664d4e56f4264992e0ae75ac5141b
+      internalID: -849637378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Doom-Demon_1
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 523
+        width: 40
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b873bd7f28efd284aa301a1ba28714ed
+      internalID: -1624913395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Doom-Demon_2
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 523
+        width: 37
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 986c35c8e95c0be4abc1475ee350cff8
+      internalID: 293178479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Doom-Demon_3
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 523
+        width: 40
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f9a739fcae89c647aba773c9f867a31
+      internalID: 1532169936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Doom-Demon_4
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 523
+        width: 41
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07114d993291ebb499c43faa2dfc48a5
+      internalID: 717096772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Doom-Demon_5
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 523
+        width: 41
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5d5a5120d67aff4b9da6e1d8fcce49d
+      internalID: 1176354676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Doom-Demon_6
+      rect:
+        serializedVersion: 2
+        x: 247
+        y: 523
+        width: 41
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c48709ac5bb840d4aa92385b1bfc6aa0
+      internalID: 234587714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Doom-Demon_7
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 467
+        width: 54
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e14121b58982c942bd675b0531ae94f
+      internalID: -2080109142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Doom-Demon_8
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 467
+        width: 46
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e396dd586ee10364f822473a6cfe7e45
+      internalID: 1723122501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Doom-Demon_9
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 467
+        width: 53
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e9bc52328e93b447b14df712104567d
+      internalID: 803319395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Doom-Demon_10
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 467
+        width: 50
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58cf77184767f254098f45832bdefd7b
+      internalID: -334636513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Doom-Demon_11
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 467
+        width: 44
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3fc59fc6d2dd3384e9aa4496c77c2086
+      internalID: 647403840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Doom-Demon_12
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 467
+        width: 46
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84c0ee5f9022f744a9e3599018c4ea2c
+      internalID: -2037511734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Doom-Demon_13
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 467
+        width: 48
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: addddea0fcb4b1e4a8d6f05f2301eb8a
+      internalID: -504062427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Doom-Demon_14
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 414
+        width: 55
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5ccf78b87e1e3b49abf6ef9b41bf710
+      internalID: -1495954427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Doom-Demon_15
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 414
+        width: 53
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d610fef5cd9d0749bdf4eae3b41009d
+      internalID: -156165846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Doom-Demon_16
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 414
+        width: 55
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e69b05cb94d5f14d9924a99ad860dae
+      internalID: 1264258552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Doom-Demon_17
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 414
+        width: 55
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a83bca83bbe646146ac77f69f33e2a7f
+      internalID: 98676696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Doom-Demon_18
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 413
+        width: 55
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7595bf3c4deb864438bb5a2309fcb8bd
+      internalID: -111537952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Doom-Demon_19
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 413
+        width: 61
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3181b6364f2d52747bf8bd7cdd2a5ab6
+      internalID: -1632676211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Doom-Demon_20
+      rect:
+        serializedVersion: 2
+        x: 347
+        y: 413
+        width: 64
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0e77612357101c4fb168cb720e1f8e8
+      internalID: 1128288312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Doom-Demon_21
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 363
+        width: 52
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8f77e2853446a945bf768a71d4159ef
+      internalID: 1094714171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Doom-Demon_22
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 363
+        width: 49
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ecfa10b1d233494ebd37db59491b70f
+      internalID: 1896361262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Doom-Demon_23
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 363
+        width: 46
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce7a77fb972df594888b34c641b16d2a
+      internalID: -2111974239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Doom-Demon_24
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 363
+        width: 43
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0c74ab73cc0cd94eaf944709a2c0c81
+      internalID: -479007954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Doom-Demon_25
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 363
+        width: 49
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5ecac37c6ca7cd41aa560ca4f140c45
+      internalID: -71298530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Doom-Demon_26
+      rect:
+        serializedVersion: 2
+        x: 247
+        y: 363
+        width: 52
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46bad49b8de6fc545800cf505dc5f4f2
+      internalID: -1371800496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Doom-Demon_27
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 363
+        width: 52
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 264e875d5b8afec48820ba8497a26f40
+      internalID: -663621002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Doom-Demon_28
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 311
+        width: 33
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2dd4f60d25d29142a0f0653b5027dd5
+      internalID: -515861531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Doom-Demon_29
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 311
+        width: 36
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd9f52cc9fd35804eb5bfd07d01babb7
+      internalID: 1112650670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Doom-Demon_30
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 311
+        width: 33
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50b8ddab101248243951ff58299bd0c2
+      internalID: 1363006501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Doom-Demon_31
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 311
+        width: 37
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7f36b9451042e748b6e719e8fcab39b
+      internalID: 674323615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Doom-Demon_32
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 311
+        width: 39
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8be8fe27c3309eb4daf823ba075e493c
+      internalID: -668264555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Doom-Demon_33
+      rect:
+        serializedVersion: 2
+        x: 187
+        y: 311
+        width: 39
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eccd309d85354f74990b356c2bf17de8
+      internalID: -1594573903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Doom-Demon_34
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 311
+        width: 39
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1cb7d773fd687d4aa82ab73ff1094b6
+      internalID: -2092778912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Doom-Demon_35
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 260
+        width: 43
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9ca47d09bdfd114d8e349aefec0c21a
+      internalID: -1505522554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Doom-Demon_36
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 260
+        width: 46
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58f8d27945a8612499aebb92723bde92
+      internalID: 83111503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Doom-Demon_37
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 260
+        width: 49
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe0b4ce70d151a0459753afd0b94aafd
+      internalID: 954301290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Doom-Demon_38
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 260
+        width: 52
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2eca8eb377a3a7041944f01dfc89bc2d
+      internalID: -686369385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Doom-Demon_39
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 260
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ece986a58490574eadb0cb1c6380551
+      internalID: 1774150625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Doom-Demon_40
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 260
+        width: 48
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03c2e1c841a0996488309b2d8deeb04d
+      internalID: -1750664396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Doom-Demon_41
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 260
+        width: 49
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a8d990f02dc3e74f917516c4683d337
+      internalID: -1901335601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Doom-Demon_42
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 207
+        width: 54
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0eab880e578709a44bbc996e84d7cd40
+      internalID: 1052833321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Doom-Demon_43
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 207
+        width: 55
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 283c5e0cf0ac59140bb11b48ac5c2f31
+      internalID: 874272359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Doom-Demon_44
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 207
+        width: 53
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e641ccb3d8c6c13458a78f4f6a659982
+      internalID: 1561683508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Doom-Demon_45
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 207
+        width: 55
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6cebf8cec00398643a54d87f971e5243
+      internalID: -886901092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Doom-Demon_46
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 207
+        width: 54
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c9d938f63f958c468fc55fba98713d7
+      internalID: -11277770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Doom-Demon_47
+      rect:
+        serializedVersion: 2
+        x: 281
+        y: 207
+        width: 58
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d791caa789bbdbe4abfcd326d129b9d6
+      internalID: 545837206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Doom-Demon_48
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 207
+        width: 60
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c370186c396d5304fb83721facd8330c
+      internalID: -275814922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Doom-Demon_49
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 151
+        width: 51
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 825dd8d9feabcbf4c8a0b57b95533322
+      internalID: -743530094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Doom-Demon_50
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 151
+        width: 54
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b21a9aa09523ed64999f07fbafa827f2
+      internalID: 1049158593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Doom-Demon_51
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 151
+        width: 46
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48fc6ccfa59d9d64a8f16d9ba906e3c2
+      internalID: 196419958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Doom-Demon_52
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 151
+        width: 54
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b53e7623b4461ce4aa9205d6262a01ad
+      internalID: 1272935028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Doom-Demon_53
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 151
+        width: 49
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 215402d3fc35b9d449448842e28a2d4f
+      internalID: 672054239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Doom-Demon_54
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 151
+        width: 51
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82a19ee636da5444e91c782fe0ea1024
+      internalID: 612207667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Doom-Demon_55
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 152
+        width: 53
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71fe52ce22f6b604483bffaddfbf9e75
+      internalID: 1607728192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Doom-Demon_56
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 69
+        width: 36
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1c06fa50b991c84eae555ce4b3a46c1
+      internalID: 967588449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Doom-Demon_57
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 69
+        width: 46
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68d4b5cb44210e642b551b2f0607a851
+      internalID: -227792496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Doom-Demon_58
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 69
+        width: 54
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 568167266dfbd6344bb5fb5e92f97c67
+      internalID: 1393144474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Doom-Demon_59
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 69
+        width: 47
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5fb38fbe21713c547bbfcce8a807d1dd
+      internalID: 1807387258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Doom-Demon_60
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 66
+        width: 33
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8352b73437c5fa49ab64b33e3cf6534
+      internalID: 158058500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Doom-Demon_61
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 69
+        width: 41
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3cd92469a21e0c940af239eefb0f2bf9
+      internalID: 922790154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Doom-Demon_62
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 69
+        width: 52
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7792b052c0fbb454cab3638d50a22c37
+      internalID: -2100873970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Doom-Demon_63
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 69
+        width: 49
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbe6204785ec1c343a9e8ef27e4925ef
+      internalID: -2025257636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Doom-Demon_64
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 16
+        width: 50
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eecfce39f03cf5f4399f957ccdc371ef
+      internalID: -2042934654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Doom-Demon_65
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 16
+        width: 55
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb2af7bd681cbb34b8d1dc191f8d1fab
+      internalID: 504193796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Doom-Demon_66
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 16
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 959ac7989db71f7448dc4b39085ed2c2
+      internalID: 1469857032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Doom-Demon_67
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 16
+        width: 57
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1672855dd462c6f4086d4bf7dafd7023
+      internalID: -1164309491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Doom-Demon_68
+      rect:
+        serializedVersion: 2
+        x: 185
+        y: 58
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08b81bf9fc8212140a9b6c5168d25e3b
+      internalID: -72469055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Doom-Demon_69
+      rect:
+        serializedVersion: 2
+        x: 247
+        y: 48
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 094547c0aa69b3f45bc84757bd349bc0
+      internalID: -1935793920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Doom-Demon_70
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 16
+        width: 59
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7bac1f16bfcb6ad43847197b5e75f941
+      internalID: -1178138574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Doom-Demon_71
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 46
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0acee99af1d46f49a72292264df19a3
+      internalID: 83976090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Doom-Demon_72
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 16
+        width: 58
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3b361f1531980b41a0fd538e0750f1c
+      internalID: -825745929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 13cff665ac32fee4eb998acc9c509175
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Doom-Demon_0: -849637378
+      Doom-Demon_1: -1624913395
+      Doom-Demon_10: -334636513
+      Doom-Demon_11: 647403840
+      Doom-Demon_12: -2037511734
+      Doom-Demon_13: -504062427
+      Doom-Demon_14: -1495954427
+      Doom-Demon_15: -156165846
+      Doom-Demon_16: 1264258552
+      Doom-Demon_17: 98676696
+      Doom-Demon_18: -111537952
+      Doom-Demon_19: -1632676211
+      Doom-Demon_2: 293178479
+      Doom-Demon_20: 1128288312
+      Doom-Demon_21: 1094714171
+      Doom-Demon_22: 1896361262
+      Doom-Demon_23: -2111974239
+      Doom-Demon_24: -479007954
+      Doom-Demon_25: -71298530
+      Doom-Demon_26: -1371800496
+      Doom-Demon_27: -663621002
+      Doom-Demon_28: -515861531
+      Doom-Demon_29: 1112650670
+      Doom-Demon_3: 1532169936
+      Doom-Demon_30: 1363006501
+      Doom-Demon_31: 674323615
+      Doom-Demon_32: -668264555
+      Doom-Demon_33: -1594573903
+      Doom-Demon_34: -2092778912
+      Doom-Demon_35: -1505522554
+      Doom-Demon_36: 83111503
+      Doom-Demon_37: 954301290
+      Doom-Demon_38: -686369385
+      Doom-Demon_39: 1774150625
+      Doom-Demon_4: 717096772
+      Doom-Demon_40: -1750664396
+      Doom-Demon_41: -1901335601
+      Doom-Demon_42: 1052833321
+      Doom-Demon_43: 874272359
+      Doom-Demon_44: 1561683508
+      Doom-Demon_45: -886901092
+      Doom-Demon_46: -11277770
+      Doom-Demon_47: 545837206
+      Doom-Demon_48: -275814922
+      Doom-Demon_49: -743530094
+      Doom-Demon_5: 1176354676
+      Doom-Demon_50: 1049158593
+      Doom-Demon_51: 196419958
+      Doom-Demon_52: 1272935028
+      Doom-Demon_53: 672054239
+      Doom-Demon_54: 612207667
+      Doom-Demon_55: 1607728192
+      Doom-Demon_56: 967588449
+      Doom-Demon_57: -227792496
+      Doom-Demon_58: 1393144474
+      Doom-Demon_59: 1807387258
+      Doom-Demon_6: 234587714
+      Doom-Demon_60: 158058500
+      Doom-Demon_61: 922790154
+      Doom-Demon_62: -2100873970
+      Doom-Demon_63: -2025257636
+      Doom-Demon_64: -2042934654
+      Doom-Demon_65: 504193796
+      Doom-Demon_66: 1469857032
+      Doom-Demon_67: -1164309491
+      Doom-Demon_68: -72469055
+      Doom-Demon_69: -1935793920
+      Doom-Demon_7: -2080109142
+      Doom-Demon_70: -1178138574
+      Doom-Demon_71: 83976090
+      Doom-Demon_72: -825745929
+      Doom-Demon_8: 1723122501
+      Doom-Demon_9: 803319395
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

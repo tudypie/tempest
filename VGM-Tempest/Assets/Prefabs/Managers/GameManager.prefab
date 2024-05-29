@@ -367,7 +367,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 00
+  m_Text: 000
 --- !u!1 &3961441910440317362
 GameObject:
   m_ObjectHideFlags: 0
@@ -525,7 +525,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 00
+  m_Text: 000
 --- !u!1 &5518068158009596273
 GameObject:
   m_ObjectHideFlags: 0
@@ -1036,10 +1036,14 @@ MonoBehaviour:
   - name: Level3
     duration: 60
     hasBossfight: 0
-  playersInGame: 0
+  numOfPlayers: 0
   currentLevel: 0
   levelDuration: 0
-  gameStarted: 0
+  playersInGame:
+  - {fileID: 0}
+  - {fileID: 0}
+  ongoingGame: 0
+  ongoingLevel: 0
 --- !u!114 &2201876889416331454
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1088,6 +1092,9 @@ MonoBehaviour:
   - {fileID: 1006260461382745860}
   - {fileID: 7677564942952457087}
   totalScoreText: {fileID: 5486700693083384822}
+  displayedScore0: 0
+  displayedScore1: 0
+  displayedTotalScore: 0
 --- !u!114 &1263595637142313053
 MonoBehaviour:
   m_ObjectHideFlags: 0

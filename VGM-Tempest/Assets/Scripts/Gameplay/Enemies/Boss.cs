@@ -16,6 +16,8 @@ public class Boss : MonoBehaviour
         if (hp < 0)
         {
             Destroy(gameObject);
+            GameManager.Instance.scoreManager.AddScore(0, 50);
+            GameManager.Instance.scoreManager.AddScore(1, 50);
             GameManager.Instance.NextLevel();
         }
     }
