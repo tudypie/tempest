@@ -1028,20 +1028,25 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 97f02f9071336b149b55265cccf4c1c0, type: 2}
   levels:
   - name: StartLevel
-    duration: 40
+    duration: 30
     hasBossfight: 0
+    showEndLevelText: 1
   - name: Tetris
-    duration: 60
+    duration: 45
     hasBossfight: 0
+    showEndLevelText: 1
   - name: Doom
     duration: 0
     hasBossfight: 1
-  - name: Overworld
-    duration: 60
+    showEndLevelText: 1
+  - name: MCOverworld
+    duration: 45
     hasBossfight: 0
-  - name: Nether
+    showEndLevelText: 0
+  - name: MCNether
     duration: 0
     hasBossfight: 1
+    showEndLevelText: 1
   numOfPlayers: 0
   currentLevel: 0
   levelDuration: 0

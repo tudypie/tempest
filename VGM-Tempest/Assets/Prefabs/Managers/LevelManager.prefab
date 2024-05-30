@@ -55,7 +55,8 @@ MonoBehaviour:
   currentSpawnTime: 0
   spawningDuration: 0
   keepRotation: 0
-  spawnOffset: {x: 0, y: 0, z: 27}
+  invertRotation: 0
+  spawnOffset: {x: 0, y: 0, z: 24}
   rotationOffset: {x: 0, y: 0, z: 0}
 --- !u!114 &399986031786316516
 MonoBehaviour:

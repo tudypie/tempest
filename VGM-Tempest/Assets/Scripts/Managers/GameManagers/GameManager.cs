@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
         public string name;
         public float duration;
         public bool hasBossfight;
+        public bool showEndLevelText;
     }
 
     [Header("References")]
@@ -178,8 +179,15 @@ public class GameManager : MonoBehaviour
         Transform spawnedObject = Instantiate(objectToSpawn, wireframe.lines[wireframeLineIndex].position + spawnOffset, 
             keepRotation ? Quaternion.identity : wireframe.lines[wireframeLineIndex].rotation).transform;
 
-        if(invertRotation && wireframeLineIndex > 5 && wireframeLineIndex < 14)
-            spawnedObject.localScale =  new Vector3(spawnedObject.localScale.x, -spawnedObject.localScale.y, spawnedObject.localScale.z);
+        if(invertRotation)
+        {
+            if (wireframeLineIndex > 5 && wireframeLineIndex < 14)
+                spawnedObject.localScale = new Vector3(spawnedObject.localScale.x, -spawnedObject.localScale.y, spawnedObject.localScale.z);
+            else if (wireframeLineIndex > 14)
+                spawnedObject.Rotate(0f, 0f, -90f);
+            else if (wireframeLineIndex > 2 && wireframeLineIndex < 5)
+                spawnedObject.Rotate(0f, 0f, 90f);
+        }
 
         return spawnedObject.gameObject;
      }
@@ -188,17 +196,21 @@ public class GameManager : MonoBehaviour
     {
         enemySpawner.DestroyAllEnemies();
         mainCamera.GetComponent<Animator>().Play("NextLevel");
-        yield return new WaitForSeconds(2f);
 
-        textSpawner.ShowEndLevelText();
-        while(!textSpawner.FinishedTypeWriterEffect)
-            yield return null;
+        if (levels[level-1].showEndLevelText)
+        {
+            yield return new WaitForSeconds(2f);
+            textSpawner.ShowEndLevelText();
+            while (!textSpawner.FinishedTypeWriterEffect)
+                yield return null;
 
-        yield return new WaitForSeconds(2f);
-        mainCamera.GetComponent<Animator>().Play("NextLevel2");
+            yield return new WaitForSeconds(2f);
+            mainCamera.GetComponent<Animator>().Play("NextLevel2");
+        }
+
         yield return new WaitForSeconds(3f);
 
-        if(level < levels.Length)
+        if (level < levels.Length)
         {
             SceneManager.LoadScene(levels[level].name);
             yield return new WaitForSeconds(1f);

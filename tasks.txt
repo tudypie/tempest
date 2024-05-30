@@ -4,6 +4,7 @@ end game screen with total score
 	[-] leaderboard
 visual fx
 	[-] enemy explosion effect
+	[?] enemy trail
 	[-] projectile spawn effect
 	[-] feedback when score changes (+1; -10)
 doom level
@@ -17,9 +18,27 @@ tetris level
 	[x] rectangular wireframe
 	[-] gameboy boss
 	[-] gameboy screen video / text
+minecraft level
+	[-] ghast boss
+		[-] fireball projectile (enemy)
+	[-] nether portal transition
+		[x] animation
+		[?] effect
+	[?] 2 more overworld enemies
+	[-] creeper explode effect & sound
+sound design
+	[-] stop music when level ends
+	[-] music for overworld & nether
+	[-] music for start (tempest) level
+	[-] end screen score add sfx
+	[-] typewriter text sfx
+	[-] nether portal sfx
+	[-] ghast sfx
 
-[x] add 100 score on boss defeated
-	[x] check if second player is in game
-[x] restrict movement when level ends
-[-] recreate default tempest enemy models
-[x] destroy all enemies when level end
+misc
+	[x] add 100 score on boss defeated
+		[x] check if second player is in game
+	[x] restrict movement when level ends
+	[-] recreate default tempest enemy models
+	[x] destroy all enemies when level ends
+	[-] press button to continue to restart game
