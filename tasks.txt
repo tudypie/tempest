@@ -15,7 +15,8 @@ doom level
 tetris level
 	[x] music
 	[x] rectangular wireframe
-	[-] boss hit effect
+	[-] gameboy boss
+	[-] gameboy screen video / text
 
 [x] add 100 score on boss defeated
 	[x] check if second player is in game

@@ -1036,6 +1036,12 @@ MonoBehaviour:
   - name: Doom
     duration: 0
     hasBossfight: 1
+  - name: Overworld
+    duration: 60
+    hasBossfight: 0
+  - name: Nether
+    duration: 0
+    hasBossfight: 1
   numOfPlayers: 0
   currentLevel: 0
   levelDuration: 0
