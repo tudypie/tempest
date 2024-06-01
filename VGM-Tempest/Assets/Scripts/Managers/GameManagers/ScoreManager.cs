@@ -16,6 +16,7 @@ public class ScoreManager : MonoBehaviour
     {
         score[playerNumber] += value;
         gameManager.uiManager.UpdatePlayerScoreText(playerNumber, score[playerNumber]);
+        gameManager.uiManager.PlayScoreFeedbackAnimation(playerNumber, value);
     }
 
     public void CalculateTotalScore()

@@ -88,10 +88,10 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void StartGame()
+    private IEnumerator StartGame()
     {
-        uiManager.ActivateStartCanvas(false);
-        uiManager.ActivatePlayerCanvas(true);
+        uiManager.StartCoroutine(uiManager.PlayGameIntro());
+        while (!uiManager.finishedIntro) yield return null;
         ongoingGame = true;
         StartLevel();
     }
@@ -106,6 +106,7 @@ public class GameManager : MonoBehaviour
         mainCamera.GetComponent<Animator>().Play("BeginLevel");
         levelDuration = levels[currentLevel].duration;
         enemySpawner.spawningDuration = levelDuration - 5;
+        textSpawner.StartCoroutine(textSpawner.SpawningSequence());
         ongoingLevel = true;
     }
 
@@ -129,6 +130,7 @@ public class GameManager : MonoBehaviour
         uiManager.ActivateEndCanvas(false);
         uiManager.ActivatePlayerCanvas(false);
         uiManager.ActivateStartCanvas(true);
+        uiManager.finishedIntro = false;
 
         wireframe = Wireframe.Instance;
         textSpawner = TextMessageSpawner.Instance;
@@ -155,7 +157,7 @@ public class GameManager : MonoBehaviour
     public void OnPlayerJoin(PlayerManager player)
     {
         if (currentLevel == 0 && numOfPlayers == 0)
-            StartGame();
+            StartCoroutine(StartGame());
 
         playersInGame[numOfPlayers] = player;
         player.playerNumber = numOfPlayers;
@@ -200,8 +202,8 @@ public class GameManager : MonoBehaviour
         if (levels[level-1].showEndLevelText)
         {
             yield return new WaitForSeconds(2f);
-            textSpawner.ShowEndLevelText();
-            while (!textSpawner.FinishedTypeWriterEffect)
+            textSpawner.StartCoroutine(textSpawner.ShowEndLevelText());
+            while (!textSpawner.FinishedMessages)
                 yield return null;
 
             yield return new WaitForSeconds(2f);

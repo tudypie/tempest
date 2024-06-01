@@ -8,7 +8,7 @@ public class Enemy : MovingObject
     {
         if (other.TryGetComponent(out PlayerManager playerManager))
         {
-            GameManager.Instance.scoreManager.AddScore(playerManager.playerNumber, -10);
+            playerManager.TakeDamage();
             Destroy(gameObject);
         }
 

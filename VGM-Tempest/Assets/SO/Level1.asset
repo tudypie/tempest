@@ -13,9 +13,27 @@ MonoBehaviour:
   m_Name: Level1
   m_EditorClassIdentifier: 
   messages:
-  - text: help us open
+  - text: consoles
+    lineSpawnPoint: 15
+    spawnOffset: {x: 0, y: 0, z: 22}
+    delay: 0
+  - text: computers
     lineSpawnPoint: 14
-    spawnOffset: {x: 0, y: 0, z: 15}
-  - text: video game museum
+    spawnOffset: {x: 0, y: 0, z: 22}
+    delay: 0
+  - text: cabinets
     lineSpawnPoint: 13
-    spawnOffset: {x: 0, y: 0, z: 15}
+    spawnOffset: {x: 0, y: 0, z: 22}
+    delay: 2
+  - text: 'From pong to hades   '
+    lineSpawnPoint: 14
+    spawnOffset: {x: 0, y: 0, z: 22}
+    delay: 8
+  - text: 'From Kyoto to palo alto   '
+    lineSpawnPoint: 14
+    spawnOffset: {x: 0, y: 0, z: 22}
+    delay: 8
+  - text: Oh and a Romanian wing, too
+    lineSpawnPoint: 14
+    spawnOffset: {x: 0, y: 0, z: 22}
+    delay: 0

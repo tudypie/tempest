@@ -20,7 +20,8 @@ public class TextMessageSpawner : MonoBehaviour
 
     [Header("End Level Messages")]
     [SerializeField] private Text endLevelText;
-    [SerializeField][TextArea(5, 10)] private string endLevelMessage;
+    [SerializeField] private float delayBetweenMessages;
+    [SerializeField][TextArea(5, 10)] private string[] endLevelMessages;
     [SerializeField] private float typeWriterEffectDelay = 0.04f;
 
     private GameObject spawnedCharacter;
@@ -28,7 +29,7 @@ public class TextMessageSpawner : MonoBehaviour
 
     private GameManager gameManager;
 
-    public bool FinishedTypeWriterEffect { get; private set; } = false;
+    public bool FinishedMessages { get; private set; } = false;
 
     public static TextMessageSpawner Instance;
 
@@ -45,25 +46,30 @@ public class TextMessageSpawner : MonoBehaviour
     private void Start()
     {
         gameManager = GameManager.Instance;
-        if (gameManager.ongoingGame && textMessages != null)
-        {
-            StartCoroutine(SpawningSequence());
-        }
     }
 
-    public void ShowEndLevelText()
+    public IEnumerator ShowEndLevelText()
     {
-        FinishedTypeWriterEffect = false;
-        StartCoroutine(TypeWriterEffect(endLevelMessage));
+        FinishedMessages = false;
+        foreach(string message in endLevelMessages)
+        {
+            StartCoroutine(TypeWriterEffect(message));
+            yield return new WaitForSeconds(delayBetweenMessages);
+        }
+        FinishedMessages = true;
     }
 
     public IEnumerator SpawningSequence()
     {
-        yield return new WaitForSeconds(beginSpawningDelay);
-        foreach (TextMessagesSO.Message message in textMessages.messages)
+        if(textMessages != null)
         {
-            StartCoroutine(SpawnTextMessage(message));
-            yield return new WaitForSeconds(delayBetweenCharacters * message.text.Length);
+            yield return new WaitForSeconds(beginSpawningDelay);
+            foreach (TextMessagesSO.Message message in textMessages.messages)
+            {
+                StartCoroutine(SpawnTextMessage(message));
+                yield return new WaitForSeconds(delayBetweenCharacters * message.text.Length);
+                yield return new WaitForSeconds(message.delay);
+            }
         }
     }
 
@@ -71,11 +77,13 @@ public class TextMessageSpawner : MonoBehaviour
     {
         foreach (char c in message.text)
         {
+            if (characterDictionary.ContainsKey(char.ToUpper(c)))
+            {
+                spawnedCharacter = gameManager.SpawnObjectOnMap(characterPrefab, message.lineSpawnPoint, message.spawnOffset);
+                spawnedCharacter.transform.GetChild(0).Rotate(rotationOffset);
+                spawnedCharacter.GetComponentInChildren<MeshFilter>().mesh = characterDictionary[char.ToUpper(c)];
+            }
             yield return new WaitForSeconds(delayBetweenCharacters);
-            if (c == ' ' || !characterDictionary.ContainsKey(char.ToUpper(c))) continue;
-            spawnedCharacter = gameManager.SpawnObjectOnMap(characterPrefab, message.lineSpawnPoint, message.spawnOffset);
-            spawnedCharacter.transform.GetChild(0).Rotate(rotationOffset);
-            spawnedCharacter.GetComponentInChildren<MeshFilter>().mesh = characterDictionary[char.ToUpper(c)];
         }
     }
 
@@ -88,6 +96,5 @@ public class TextMessageSpawner : MonoBehaviour
             endLevelText.text = currentText;
             yield return new WaitForSeconds(typeWriterEffectDelay);
         }
-        FinishedTypeWriterEffect = true;
     }
 }

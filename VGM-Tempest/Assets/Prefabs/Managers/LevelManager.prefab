@@ -74,7 +74,7 @@ MonoBehaviour:
     type: 3}
   textMessages: {fileID: 11400000, guid: 492283b9adf0da047ae7e50d352e21ba, type: 2}
   beginSpawningDelay: 6
-  delayBetweenCharacters: 0.25
+  delayBetweenCharacters: 0.18
   rotationOffset: {x: 90, y: 90, z: 0}
   characterKey: 4100420043004400450046004700480049004a004b004c004d004e004f0050005100520053005400550056005700580059005a0030003100320033003400350036003700380039002e0021003f00
   characterMesh:
@@ -118,14 +118,8 @@ MonoBehaviour:
   - {fileID: 3032932872473505902, guid: 790e1e29765ad7a40a23f8314ff7bb31, type: 3}
   - {fileID: 3032932872473505902, guid: 4a95022107129ae448f88427196d3c50, type: 3}
   endLevelText: {fileID: 7592714228177633526}
-  endLevelMessage: 'help us open video game museum
-
-    help us open video game museum
-
-    help
-    us open video game museum
-
-    help us open video game museum'
+  delayBetweenMessages: 0
+  endLevelMessages: []
   typeWriterEffectDelay: 0.04
 --- !u!1 &4046129262247122521
 GameObject:
@@ -161,8 +155,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: -0.000023841858, y: -0.0000014305115}
+  m_SizeDelta: {x: 2745.7, y: 1028.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7582301810489410418
 CanvasRenderer:
@@ -202,8 +196,8 @@ MonoBehaviour:
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
-    m_HorizontalOverflow: 1
-    m_VerticalOverflow: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 
 --- !u!1 &7936937686839775089
@@ -233,7 +227,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7936937686839775089}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 45.3}
+  m_LocalPosition: {x: 0, y: 0, z: 49.36}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

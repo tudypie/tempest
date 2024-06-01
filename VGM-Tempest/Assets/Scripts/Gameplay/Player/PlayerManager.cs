@@ -27,4 +27,10 @@ public class PlayerManager : MonoBehaviour
         gameManager.OnPlayerJoin(this);
         meshRenderer.material = playerMaterial;
     }
+
+    public void TakeDamage()
+    {
+        gameManager.scoreManager.AddScore(playerNumber, -10);
+        gameManager.audioManager.PlaySound(audioSource, gameManager.audioManager.playerTakeDamage);
+    }
 }

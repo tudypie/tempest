@@ -10,6 +10,7 @@ public class TextMessagesSO : ScriptableObject
         [TextArea(5, 10)] public string text;
         public int lineSpawnPoint;
         public Vector3 spawnOffset;
+        public float delay;
     }
 
     public Message[] messages;

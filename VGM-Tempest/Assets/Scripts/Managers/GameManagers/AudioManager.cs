@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-    public AudioClip shoot, explosion;
+    public AudioClip shoot, explosion, playerTakeDamage;
     [HideInInspector] public AudioSource audioSource;
 
     private void Awake()
