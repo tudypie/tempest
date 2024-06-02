@@ -1549,7 +1549,7 @@ MonoBehaviour:
     hasBossfight: 1
     showEndLevelText: 1
   - name: MCOverworld
-    duration: 45
+    duration: 30
     hasBossfight: 0
     showEndLevelText: 0
   - name: MCNether
@@ -1578,6 +1578,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   score: 0000000000000000
   totalScore: 0
+  highscore: 0
 --- !u!114 &7405788054029994251
 MonoBehaviour:
   m_ObjectHideFlags: 0
