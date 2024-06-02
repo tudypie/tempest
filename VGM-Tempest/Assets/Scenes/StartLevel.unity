@@ -329,6 +329,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7592714228177633526, guid: 159db8b161f520b42bc318696ca42056,
+        type: 3}
+      propertyPath: m_Text
+      value: 'but all this time-mining venue needs help. help from people like you. '
+      objectReference: {fileID: 0}
     - target: {fileID: 7751432091648169470, guid: 159db8b161f520b42bc318696ca42056,
         type: 3}
       propertyPath: beginSpawningDelay

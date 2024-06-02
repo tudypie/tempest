@@ -46,6 +46,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 298842c6949a6414e90a76b1151c84ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onLevelEnd:
+    m_PersistentCalls:
+      m_Calls: []
   enemies:
   - {fileID: 1858356101863002716, guid: deb710a93a24aaa4da534ad5a643c697, type: 3}
   beginSpawningDelay: 3
@@ -120,7 +123,7 @@ MonoBehaviour:
   endLevelText: {fileID: 7592714228177633526}
   delayBetweenMessages: 7
   endLevelMessages: []
-  typeWriterEffectDelay: 0.05
+  typeWriterEffectDelay: 0.06
 --- !u!1 &4046129262247122521
 GameObject:
   m_ObjectHideFlags: 0
