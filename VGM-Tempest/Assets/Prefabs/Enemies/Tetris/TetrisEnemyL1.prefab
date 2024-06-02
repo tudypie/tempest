@@ -242,10 +242,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colors:
-  - {fileID: 2100000, guid: 1018bf410c7c3c6459233f51efe3cd35, type: 2}
-  - {fileID: 2100000, guid: e82577f7210914b4dab7764f3832e65c, type: 2}
-  - {fileID: 2100000, guid: 277cf584ed9535c4fad9c0416eae0b82, type: 2}
-  - {fileID: 2100000, guid: 447bfd94daae92548af0f01995c96304, type: 2}
+  - {fileID: 2100000, guid: bd1b94c46e87d9c4d9d3edbdb828c15f, type: 2}
+  - {fileID: 2100000, guid: 919724307fdbc774681b38e24b99cb09, type: 2}
+  - {fileID: 2100000, guid: 8a66a1408e3a33e48bf1f160bdac786a, type: 2}
+  - {fileID: 2100000, guid: 8620c2912482fd34e927c34694a5df81, type: 2}
 --- !u!4 &6989589193890879167 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5135313320842974237, guid: deb710a93a24aaa4da534ad5a643c697,
