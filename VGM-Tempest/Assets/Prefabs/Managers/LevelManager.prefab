@@ -118,9 +118,9 @@ MonoBehaviour:
   - {fileID: 3032932872473505902, guid: 790e1e29765ad7a40a23f8314ff7bb31, type: 3}
   - {fileID: 3032932872473505902, guid: 4a95022107129ae448f88427196d3c50, type: 3}
   endLevelText: {fileID: 7592714228177633526}
-  delayBetweenMessages: 0
+  delayBetweenMessages: 7
   endLevelMessages: []
-  typeWriterEffectDelay: 0.04
+  typeWriterEffectDelay: 0.05
 --- !u!1 &4046129262247122521
 GameObject:
   m_ObjectHideFlags: 0
@@ -187,7 +187,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: a3d426e9638488d49b29c2458715a5d1, type: 3}
+    m_Font: {fileID: 12800000, guid: a252923e6da5e0b4f9ce3424a63ecc5d, type: 3}
     m_FontSize: 200
     m_FontStyle: 0
     m_BestFit: 0
@@ -227,7 +227,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7936937686839775089}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 49.36}
+  m_LocalPosition: {x: 0, y: 0, z: 49.38}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

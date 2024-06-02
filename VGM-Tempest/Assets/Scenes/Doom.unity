@@ -238,6 +238,22 @@ PrefabInstance:
       propertyPath: textMessages
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 399986031786316516, guid: 159db8b161f520b42bc318696ca42056,
+        type: 3}
+      propertyPath: endLevelMessages.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 399986031786316516, guid: 159db8b161f520b42bc318696ca42056,
+        type: 3}
+      propertyPath: 'endLevelMessages.Array.data[0]'
+      value: As our museum will take shape you will be able to track our progress
+        on v-g-m.com
+      objectReference: {fileID: 0}
+    - target: {fileID: 399986031786316516, guid: 159db8b161f520b42bc318696ca42056,
+        type: 3}
+      propertyPath: 'endLevelMessages.Array.data[1]'
+      value: And if you are a potential museum donor, contact us at mail@v-g-m.com
+      objectReference: {fileID: 0}
     - target: {fileID: 3166509137050185021, guid: 159db8b161f520b42bc318696ca42056,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -602,7 +618,7 @@ PrefabInstance:
     - target: {fileID: 7665138859101526300, guid: 35c8035305c204b4f921ddcc3b964911,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8995826328783584267, guid: 35c8035305c204b4f921ddcc3b964911,
         type: 3}

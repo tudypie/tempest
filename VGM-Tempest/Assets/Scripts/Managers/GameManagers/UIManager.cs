@@ -11,6 +11,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Text[] playerScoresText;
     [SerializeField] private Text[] scoreFeedbackText;
     [SerializeField] private Text totalScoreText;
+    [SerializeField] private GameObject highscoreText;
 
     [Header("Intro Text")]
     [SerializeField] private Text introText;
@@ -18,11 +19,20 @@ public class UIManager : MonoBehaviour
     [SerializeField][TextArea(5, 10)] private string[] introMessages;
     public bool finishedIntro;
 
+    private GameManager gameManager;
+
+    private void Awake()
+    {
+        gameManager = GameManager.Instance;
+    }
+
     public void ActivateStartCanvas(bool value) => startGameCanvas.SetActive(value);
 
     public void ActivatePlayerCanvas(bool  value) => playerCanvas.SetActive(value);
 
     public void ActivateEndCanvas(bool value) => endGameCanvas.SetActive(value);
+
+    public void ActivateHighscoreText(bool value) => highscoreText.SetActive(value);
 
     public void PlayScoreFeedbackAnimation(int player, int amount)
     {
@@ -71,8 +81,11 @@ public class UIManager : MonoBehaviour
         UpdatePlayerScoreText(0, (int)displayedScore0);
         UpdatePlayerScoreText(1, (int)displayedScore1);
 
-        yield return new WaitForSeconds(4f);
-        GameManager.Instance.RestartGame();
+        if (gameManager.scoreManager.IsHighscore)
+            ActivateHighscoreText(true);
+
+        yield return new WaitForSeconds(8f);
+        gameManager.RestartGame();
     }
 
     public IEnumerator TypeWriterEffect(Text text, string fullText)

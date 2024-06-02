@@ -24,7 +24,7 @@ MonoBehaviour:
   - text: cabinets
     lineSpawnPoint: 13
     spawnOffset: {x: 0, y: 0, z: 22}
-    delay: 2
+    delay: 10
   - text: 'From pong to hades   '
     lineSpawnPoint: 14
     spawnOffset: {x: 0, y: 0, z: 22}
@@ -33,7 +33,7 @@ MonoBehaviour:
     lineSpawnPoint: 14
     spawnOffset: {x: 0, y: 0, z: 22}
     delay: 8
-  - text: Oh and a Romanian wing, too
+  - text: and a Romanian wing, too
     lineSpawnPoint: 14
     spawnOffset: {x: 0, y: 0, z: 22}
     delay: 0

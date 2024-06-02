@@ -1,10 +1,12 @@
-using NUnit.Framework;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class EnemySpawner : MonoBehaviour
 {
+    [SerializeField] private UnityEvent onLevelEnd;
+
     [Header("References")]
     [SerializeField] private GameObject[] enemies;
 
@@ -92,5 +94,11 @@ public class EnemySpawner : MonoBehaviour
             SpawnEnemy();
             currentSpawnTime = Mathf.Clamp(currentSpawnTime - spawnTimeDecrease, minSpawnTime, maxSpawnTime);
         }
+    }
+
+    public void OnLevelEnd()
+    {
+        DestroyAllEnemies();
+        onLevelEnd?.Invoke();
     }
 }

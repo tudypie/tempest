@@ -4,8 +4,16 @@ public class ScoreManager : MonoBehaviour
 {
     [SerializeField] private int[] score;
     [SerializeField] private int totalScore;
+    [SerializeField] private int highscore;
 
     private GameManager gameManager;
+
+    public bool IsHighscore { get; private set; }
+
+    private void Awake()
+    {
+        highscore = PlayerPrefs.GetInt("Highscore");
+    }
 
     private void Start()
     {
@@ -22,6 +30,11 @@ public class ScoreManager : MonoBehaviour
     public void CalculateTotalScore()
     {
         totalScore = score[0] + score[1];
+        if(totalScore > highscore) {
+            PlayerPrefs.SetInt("Highscore", totalScore);
+            highscore = PlayerPrefs.GetInt("Highscore");
+            IsHighscore = true;
+        }
         StartCoroutine(gameManager.uiManager.ShowTotalScore(score[0], score[1], totalScore));
     }
 

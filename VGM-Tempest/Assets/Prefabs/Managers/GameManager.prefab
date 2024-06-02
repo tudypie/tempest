@@ -197,7 +197,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: a3d426e9638488d49b29c2458715a5d1, type: 3}
+    m_Font: {fileID: 12800000, guid: a252923e6da5e0b4f9ce3424a63ecc5d, type: 3}
     m_FontSize: 100
     m_FontStyle: 0
     m_BestFit: 0
@@ -276,7 +276,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: a3d426e9638488d49b29c2458715a5d1, type: 3}
+    m_Font: {fileID: 12800000, guid: a252923e6da5e0b4f9ce3424a63ecc5d, type: 3}
     m_FontSize: 100
     m_FontStyle: 0
     m_BestFit: 0
@@ -493,6 +493,103 @@ MonoBehaviour:
     m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: 000
+--- !u!1 &3333497503970394668
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1315245585087801208}
+  - component: {fileID: 1929419871663850416}
+  - component: {fileID: 1065884060337079713}
+  - component: {fileID: 4328826414985923986}
+  m_Layer: 5
+  m_Name: Highscore
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1315245585087801208
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3333497503970394668}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6972993852379263414}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -166}
+  m_SizeDelta: {x: 300, y: 80}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &1929419871663850416
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3333497503970394668}
+  m_CullTransparentMesh: 1
+--- !u!114 &1065884060337079713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3333497503970394668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0.42557812, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: a252923e6da5e0b4f9ce3424a63ecc5d, type: 3}
+    m_FontSize: 100
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 120
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
+    m_LineSpacing: 1
+  m_Text: new highscore
+--- !u!111 &4328826414985923986
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3333497503970394668}
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Animation: {fileID: 7400000, guid: 22cb17c4212a2f344a259c0ad3b39d6a, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 22cb17c4212a2f344a259c0ad3b39d6a, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_UpdateMode: 0
+  m_CullingType: 0
 --- !u!1 &3887638159876813623
 GameObject:
   m_ObjectHideFlags: 0
@@ -559,7 +656,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: a3d426e9638488d49b29c2458715a5d1, type: 3}
+    m_Font: {fileID: 12800000, guid: a252923e6da5e0b4f9ce3424a63ecc5d, type: 3}
     m_FontSize: 77
     m_FontStyle: 0
     m_BestFit: 0
@@ -898,7 +995,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: a3d426e9638488d49b29c2458715a5d1, type: 3}
+    m_Font: {fileID: 12800000, guid: a252923e6da5e0b4f9ce3424a63ecc5d, type: 3}
     m_FontSize: 100
     m_FontStyle: 0
     m_BestFit: 0
@@ -943,6 +1040,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4140008266834602135}
+  - {fileID: 1315245585087801208}
   m_Father: {fileID: 2016638113502882983}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -995,7 +1093,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
+  m_PresetInfoIsWorld: 0
 --- !u!114 &7951913143223783872
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1286,7 +1384,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: a3d426e9638488d49b29c2458715a5d1, type: 3}
+    m_Font: {fileID: 12800000, guid: a252923e6da5e0b4f9ce3424a63ecc5d, type: 3}
     m_FontSize: 100
     m_FontStyle: 0
     m_BestFit: 0
@@ -1365,7 +1463,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: a3d426e9638488d49b29c2458715a5d1, type: 3}
+    m_Font: {fileID: 12800000, guid: a252923e6da5e0b4f9ce3424a63ecc5d, type: 3}
     m_FontSize: 100
     m_FontStyle: 0
     m_BestFit: 0
@@ -1439,12 +1537,12 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 97f02f9071336b149b55265cccf4c1c0, type: 2}
   levels:
   - name: StartLevel
-    duration: 50
+    duration: 60
     hasBossfight: 0
     showEndLevelText: 1
   - name: Tetris
-    duration: 0
-    hasBossfight: 1
+    duration: 45
+    hasBossfight: 0
     showEndLevelText: 1
   - name: Doom
     duration: 0
@@ -1518,6 +1616,7 @@ MonoBehaviour:
   - {fileID: 5284230007956353363}
   - {fileID: 6333542573309545781}
   totalScoreText: {fileID: 5486700693083384822}
+  highscoreText: {fileID: 3333497503970394668}
   introText: {fileID: 2522980477833729731}
   delayBetweenMessages: 8
   introMessages:
@@ -1537,16 +1636,6 @@ MonoBehaviour:
     Games
 
     Museum In Bucharest'
-  - 'The place where
-
-    you are going to relive
-
-    memories from the past,
-
-    And
-    where you will make
-
-    more sense of the present'
   finishedIntro: 0
 --- !u!114 &1263595637142313053
 MonoBehaviour:
@@ -1756,7 +1845,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: a3d426e9638488d49b29c2458715a5d1, type: 3}
+    m_Font: {fileID: 12800000, guid: a252923e6da5e0b4f9ce3424a63ecc5d, type: 3}
     m_FontSize: 100
     m_FontStyle: 0
     m_BestFit: 0
@@ -1786,7 +1875,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &145864529814527219
 RectTransform:
   m_ObjectHideFlags: 0

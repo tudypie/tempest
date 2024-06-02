@@ -196,7 +196,7 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator LevelTransition(int level)
     {
-        enemySpawner.DestroyAllEnemies();
+        enemySpawner.OnLevelEnd();
         mainCamera.GetComponent<Animator>().Play("NextLevel");
 
         if (levels[level-1].showEndLevelText)
