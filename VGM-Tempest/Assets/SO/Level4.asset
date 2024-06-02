@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dabf6495daa91034e8c921b14510440e, type: 3}
+  m_Name: Level4
+  m_EditorClassIdentifier: 
+  spawnOffset: {x: 0, y: 0, z: 22}
+  delay: 2
+  messages:
+  - text: mario kart
+  - text: doom
+  - text: duke nukem
+  - text: little big planet
+  - text: tomb rider
+  - text: itch.io
+  - text: steam
+  - text: vectrex
+  - text: the last of us
+  - text: counter strike
+  - text: half life
+  - text: papers please
+  - text: cyberpunk 2077
+  - text: the witcher

@@ -12,28 +12,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dabf6495daa91034e8c921b14510440e, type: 3}
   m_Name: Level1
   m_EditorClassIdentifier: 
+  spawnOffset: {x: 0, y: 0, z: 22}
+  delay: 2
   messages:
-  - text: consoles
-    lineSpawnPoint: 15
-    spawnOffset: {x: 0, y: 0, z: 22}
-    delay: 0
-  - text: computers
-    lineSpawnPoint: 14
-    spawnOffset: {x: 0, y: 0, z: 22}
-    delay: 0
-  - text: cabinets
-    lineSpawnPoint: 13
-    spawnOffset: {x: 0, y: 0, z: 22}
-    delay: 10
-  - text: 'From pong to hades   '
-    lineSpawnPoint: 14
-    spawnOffset: {x: 0, y: 0, z: 22}
-    delay: 8
-  - text: 'From Kyoto to palo alto   '
-    lineSpawnPoint: 14
-    spawnOffset: {x: 0, y: 0, z: 22}
-    delay: 8
-  - text: and a Romanian wing, too
-    lineSpawnPoint: 14
-    spawnOffset: {x: 0, y: 0, z: 22}
-    delay: 0
+  - text: pong
+  - text: asteroids
+  - text: pac-man
+  - text: donkey kong
+  - text: commodore 64
+  - text: nintendo
+  - text: simcity
+  - text: wii sports
+  - text: metal gear solid
+  - text: animal crossing
+  - text: pokemon
+  - text: monkey island
+  - text: tetris
+  - text: wolfenstein 3d
+  - text: super mario

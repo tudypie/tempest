@@ -77,7 +77,7 @@ MonoBehaviour:
     type: 3}
   textMessages: {fileID: 11400000, guid: 492283b9adf0da047ae7e50d352e21ba, type: 2}
   beginSpawningDelay: 6
-  delayBetweenCharacters: 0.18
+  delayBetweenCharacters: 0.16
   rotationOffset: {x: 90, y: 90, z: 0}
   characterKey: 4100420043004400450046004700480049004a004b004c004d004e004f0050005100520053005400550056005700580059005a0030003100320033003400350036003700380039002e0021003f00
   characterMesh:
@@ -159,7 +159,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -0.000023841858, y: -0.0000014305115}
-  m_SizeDelta: {x: 2745.7, y: 1028.7}
+  m_SizeDelta: {x: 2896, y: 1028.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7582301810489410418
 CanvasRenderer:
@@ -182,7 +182,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -230,7 +230,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7936937686839775089}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 49.38}
+  m_LocalPosition: {x: 0, y: 0, z: 53.83}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

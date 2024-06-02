@@ -7,11 +7,10 @@ public class TextMessagesSO : ScriptableObject
     [Serializable]
     public struct Message
     {
-        [TextArea(5, 10)] public string text;
-        public int lineSpawnPoint;
-        public Vector3 spawnOffset;
-        public float delay;
+        public string text;
     }
 
+    public Vector3 spawnOffset;
+    public float delay;
     public Message[] messages;
 }

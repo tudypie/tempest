@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -68,19 +69,29 @@ public class TextMessageSpawner : MonoBehaviour
             {
                 StartCoroutine(SpawnTextMessage(message));
                 yield return new WaitForSeconds(delayBetweenCharacters * message.text.Length);
-                yield return new WaitForSeconds(message.delay);
+                yield return new WaitForSeconds(textMessages.delay);
             }
         }
     }
 
     private IEnumerator SpawnTextMessage(TextMessagesSO.Message message)
     {
+        int rndSpawnpoint = UnityEngine.Random.Range(0, gameManager.wireframe.lines.Length - 1);
+        while(rndSpawnpoint == 0 || rndSpawnpoint == 1 || rndSpawnpoint == 9 || rndSpawnpoint == 10)
+            rndSpawnpoint = UnityEngine.Random.Range(0, gameManager.wireframe.lines.Length - 1);
+
+        if (rndSpawnpoint > 0 && rndSpawnpoint < 10) 
+            message.text = Reverse(message.text);
+
         foreach (char c in message.text)
         {
             if (characterDictionary.ContainsKey(char.ToUpper(c)))
             {
-                spawnedCharacter = gameManager.SpawnObjectOnMap(characterPrefab, message.lineSpawnPoint, message.spawnOffset);
-                spawnedCharacter.transform.GetChild(0).Rotate(rotationOffset);
+                spawnedCharacter = gameManager.SpawnObjectOnMap(characterPrefab, rndSpawnpoint, textMessages.spawnOffset);
+                Transform child = spawnedCharacter.transform.GetChild(0);
+                child.Rotate(rotationOffset);
+                if (rndSpawnpoint > 0 && rndSpawnpoint < 10)
+                    child.localScale = new Vector3(-child.localScale.x, -child.localScale.y, child.localScale.z);
                 spawnedCharacter.GetComponentInChildren<MeshFilter>().mesh = characterDictionary[char.ToUpper(c)];
             }
             yield return new WaitForSeconds(delayBetweenCharacters);
@@ -96,5 +107,16 @@ public class TextMessageSpawner : MonoBehaviour
             endLevelText.text = currentText;
             yield return new WaitForSeconds(typeWriterEffectDelay);
         }
+    }
+
+    public string Reverse(string text)
+    {
+        char[] cArray = text.ToCharArray();
+        string reverse = String.Empty;
+        for (int i = cArray.Length - 1; i > -1; i--)
+        {
+            reverse += cArray[i];
+        }
+        return reverse;
     }
 }

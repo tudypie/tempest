@@ -41,6 +41,11 @@ public class PlayerMovement : MonoBehaviour
             return;
         }
 
+        if(playerManager.playerNumber == 0)
+            horizontal = InputManager.controls.Player1.Move.ReadValue<Vector2>().x;
+        else
+            horizontal = InputManager.controls.Player2.Move.ReadValue<Vector2>().x;
+
         if (horizontal > 0)
         {
             MoveLeft();

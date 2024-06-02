@@ -12,25 +12,23 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Text[] scoreFeedbackText;
     [SerializeField] private Text totalScoreText;
     [SerializeField] private GameObject highscoreText;
+    [SerializeField] private Animator videoImage;
+    [SerializeField] private Animator levelIntroPanel;
 
     [Header("Intro Text")]
     [SerializeField] private Text introText;
     [SerializeField] private float delayBetweenMessages;
     [SerializeField][TextArea(5, 10)] private string[] introMessages;
+    [SerializeField] private float typeWriterEffectDelay = 0.07f;
     public bool finishedIntro;
-
-    private GameManager gameManager;
-
-    private void Awake()
-    {
-        gameManager = GameManager.Instance;
-    }
 
     public void ActivateStartCanvas(bool value) => startGameCanvas.SetActive(value);
 
-    public void ActivatePlayerCanvas(bool  value) => playerCanvas.SetActive(value);
+    public void ActivatePlayerCanvas(bool value) => playerCanvas.SetActive(value);
 
     public void ActivateEndCanvas(bool value) => endGameCanvas.SetActive(value);
+
+    public void ActivatePlayerScoreText(int player, bool value) => playerScoresText[player].gameObject.SetActive(value);
 
     public void ActivateHighscoreText(bool value) => highscoreText.SetActive(value);
 
@@ -40,21 +38,35 @@ public class UIManager : MonoBehaviour
         scoreFeedbackText[player].GetComponent<Animator>().Play("Score");
     }
 
+    public void PlayVideoFadeIn() => videoImage.Play("ImageFadeIn");
+
+    public void PlayVideoFadeOut() => videoImage.Play("ImageFadeOut");
+
+    public void PlayLevelIntro(string game, string dev)
+    {
+        levelIntroPanel.transform.GetChild(0).GetComponent<Text>().text = game;
+        levelIntroPanel.transform.GetChild(1).GetComponent<Text>().text = dev;
+        levelIntroPanel.gameObject.SetActive(true);
+        levelIntroPanel.Play("FadeIn");
+    }
+
     public void UpdatePlayerScoreText(int player, int amount) => playerScoresText[player].text = amount.ToString("000");
 
     public void UpdateTotalScoreText(int amount) => totalScoreText.text = amount.ToString("0000");
 
     public IEnumerator PlayGameIntro()
     {
-        ActivateStartCanvas(false);
+        PlayVideoFadeOut();
+        yield return new WaitForSeconds(2f);
         foreach (string message in introMessages)
         {
             StartCoroutine(TypeWriterEffect(introText, message));
             yield return new WaitForSeconds(delayBetweenMessages);
         }
-        ActivatePlayerCanvas(true);
         introText.text = string.Empty;
         finishedIntro = true;
+        yield return new WaitForSeconds(2f);
+        ActivatePlayerCanvas(true);
     }
 
     public IEnumerator ShowTotalScore(float score0, float score1, float totalScore)
@@ -65,9 +77,9 @@ public class UIManager : MonoBehaviour
 
         while(displayedTotalScore < totalScore)
         {
-            displayedScore0 -= Time.deltaTime * (score0 / 10f);
-            displayedScore1 -= Time.deltaTime * (score1 / 10f);
-            displayedTotalScore += Time.deltaTime * (totalScore / 10f);
+            displayedScore0 -= Time.deltaTime * (score0 / 15f);
+            displayedScore1 -= Time.deltaTime * (score1 / 15f);
+            displayedTotalScore += Time.deltaTime * (totalScore / 15f);
             UpdateTotalScoreText((int)displayedTotalScore);
             UpdatePlayerScoreText(0, (int)displayedScore0);
             UpdatePlayerScoreText(1, (int)displayedScore1);
@@ -81,11 +93,11 @@ public class UIManager : MonoBehaviour
         UpdatePlayerScoreText(0, (int)displayedScore0);
         UpdatePlayerScoreText(1, (int)displayedScore1);
 
-        if (gameManager.scoreManager.IsHighscore)
-            ActivateHighscoreText(true);
+        //if (GameManager.Instance.scoreManager.IsHighscore)
+            //ActivateHighscoreText(true);
 
         yield return new WaitForSeconds(8f);
-        gameManager.RestartGame();
+        GameManager.Instance.RestartGame();
     }
 
     public IEnumerator TypeWriterEffect(Text text, string fullText)
@@ -95,7 +107,7 @@ public class UIManager : MonoBehaviour
         {
             currentText = fullText.Substring(0, i);
             text.text = currentText;
-            yield return new WaitForSeconds(0.06f);
+            yield return new WaitForSeconds(typeWriterEffectDelay);
         }
     }
 }

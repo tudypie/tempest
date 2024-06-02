@@ -9,12 +9,15 @@ public class GameManager : MonoBehaviour
     public struct GameLevel
     {
         public string name;
+        public string game;
+        public string dev;
         public float duration;
         public bool hasBossfight;
         public bool showEndLevelText;
     }
 
     [Header("References")]
+    [SerializeField] private GameObject[] playerPrefabs;
     [SerializeField] private Material[] playerMaterial;
     [SerializeField] private Material[] playerLineMaterial;
 
@@ -50,7 +53,7 @@ public class GameManager : MonoBehaviour
     {
         if (Instance != null && Instance != this)
         {
-            Destroy(gameObject);
+            //Destroy(gameObject);
         }
         else
         {
@@ -71,11 +74,24 @@ public class GameManager : MonoBehaviour
         mainCamera = Camera.main;
 
         if (ongoingGame)
-            StartGame();
+            StartLevel();
     }
 
     private void Update()
     {
+
+        if (numOfPlayers == 0 && (InputManager.controls.Player1.Move.WasPressedThisFrame() || 
+            InputManager.controls.Player1.Fire.WasPressedThisFrame()))
+        {
+            PlayerJoin();
+        }
+
+        if (numOfPlayers == 1 && (InputManager.controls.Player2.Move.WasPressedThisFrame() || 
+            InputManager.controls.Player2.Fire.WasPressedThisFrame()))
+        {
+            PlayerJoin();
+        }
+
         if (!ongoingGame || !ongoingLevel) return;
 
         if (levelDuration > 0)
@@ -86,6 +102,19 @@ public class GameManager : MonoBehaviour
         {
             NextLevel();
         }
+    }
+
+    public void PlayerJoin()
+    {
+        if (currentLevel == 0 && numOfPlayers == 0)
+            StartCoroutine(StartGame());
+
+        PlayerManager player = Instantiate(playerPrefabs[numOfPlayers], Vector3.zero, Quaternion.identity).GetComponent<PlayerManager>();
+        playersInGame[numOfPlayers] = player;
+        player.playerNumber = numOfPlayers;
+        player.playerMaterial = playerMaterial[numOfPlayers];
+        uiManager.ActivatePlayerScoreText(numOfPlayers, true);
+        numOfPlayers++;
     }
 
     private IEnumerator StartGame()
@@ -107,6 +136,7 @@ public class GameManager : MonoBehaviour
         levelDuration = levels[currentLevel].duration;
         enemySpawner.spawningDuration = levelDuration - 5;
         textSpawner.StartCoroutine(textSpawner.SpawningSequence());
+        //uiManager.PlayLevelIntro(levels[currentLevel].game, levels[currentLevel].dev);
         ongoingLevel = true;
     }
 
@@ -119,9 +149,16 @@ public class GameManager : MonoBehaviour
 
     public void RestartGame()
     {
-        SceneManager.LoadScene(0);
+        InputManager.controls.Player1.Disable();
+        Destroy(playersInGame[0].gameObject);
+        if (playersInGame[1] != null)
+        {
+            InputManager.controls.Player2.Disable();
+            Destroy(playersInGame[1].gameObject);
+        }
 
-        StartCoroutine(DelayedRemovePlayer());
+        SceneManager.LoadScene(0);
+        Destroy(gameObject);
 
         numOfPlayers = 0;
         currentLevel = 0;
@@ -130,6 +167,7 @@ public class GameManager : MonoBehaviour
         uiManager.ActivateEndCanvas(false);
         uiManager.ActivatePlayerCanvas(false);
         uiManager.ActivateStartCanvas(true);
+        uiManager.PlayVideoFadeIn();
         uiManager.finishedIntro = false;
 
         wireframe = Wireframe.Instance;
@@ -137,32 +175,12 @@ public class GameManager : MonoBehaviour
         enemySpawner = EnemySpawner.Instance;
         mainCamera = Camera.main;
     }
-    private IEnumerator DelayedRemovePlayer()
-    {
-        yield return new WaitForEndOfFrame();
-        yield return new WaitForEndOfFrame();
-        Destroy(playersInGame[0].gameObject);
-        if(playersInGame[1] != null) Destroy(playersInGame[1].gameObject);
-        yield return null;
-    }
-
 
     public void NextLevel()
     {
         ongoingLevel = false;
         currentLevel++;
         StartCoroutine(LevelTransition(currentLevel));
-    }
-
-    public void OnPlayerJoin(PlayerManager player)
-    {
-        if (currentLevel == 0 && numOfPlayers == 0)
-            StartCoroutine(StartGame());
-
-        playersInGame[numOfPlayers] = player;
-        player.playerNumber = numOfPlayers;
-        player.playerMaterial = playerMaterial[numOfPlayers];
-        numOfPlayers++;
     }
 
     public void SetPlayerLineColor(int index, int player)

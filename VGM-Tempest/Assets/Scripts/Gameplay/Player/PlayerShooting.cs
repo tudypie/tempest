@@ -35,6 +35,25 @@ public class PlayerShooting : MonoBehaviour
     {
         if (currentShootDelay > 0)
             currentShootDelay -= Time.deltaTime;
+
+        if(playerManager.playerNumber == 0)
+        {
+            if (InputManager.controls.Player1.Fire.WasPerformedThisFrame())
+            {
+                if (currentShootDelay > 0 || gameManager == null || !gameManager.ongoingLevel) return;
+                Shoot();
+                currentShootDelay = shootDelay;
+            }
+        }
+        else
+        {
+            if (InputManager.controls.Player2.Fire.WasPerformedThisFrame())
+            {
+                if (currentShootDelay > 0 || gameManager == null || !gameManager.ongoingLevel) return;
+                Shoot();
+                currentShootDelay = shootDelay;
+            }
+        }
     }
 
     private void Shoot()

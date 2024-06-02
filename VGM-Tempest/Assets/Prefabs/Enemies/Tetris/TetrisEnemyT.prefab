@@ -147,7 +147,7 @@ PrefabInstance:
     - target: {fileID: 4874297270142622947, guid: 2fea9b4c5da1be24d83a518ec8e3d0c0,
         type: 3}
       propertyPath: m_Name
-      value: TetrisEnemyT Variant
+      value: TetrisEnemyT
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
