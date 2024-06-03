@@ -64,6 +64,7 @@ public class UIManager : MonoBehaviour
             yield return new WaitForSeconds(delayBetweenMessages);
         }
         introText.text = string.Empty;
+        introText.gameObject.SetActive(false);
         finishedIntro = true;
         yield return new WaitForSeconds(2f);
         ActivatePlayerCanvas(true);
