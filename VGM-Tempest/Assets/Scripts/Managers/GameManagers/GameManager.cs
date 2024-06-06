@@ -113,6 +113,7 @@ public class GameManager : MonoBehaviour
         playersInGame[numOfPlayers] = player;
         player.playerNumber = numOfPlayers;
         player.playerMaterial = playerMaterial[numOfPlayers];
+        player.movement.currentLine = numOfPlayers == 0 ? 14 : 5;
         uiManager.ActivatePlayerScoreText(numOfPlayers, true);
         numOfPlayers++;
     }
@@ -136,7 +137,7 @@ public class GameManager : MonoBehaviour
         levelDuration = levels[currentLevel].duration;
         enemySpawner.spawningDuration = levelDuration - 5;
         textSpawner.StartCoroutine(textSpawner.SpawningSequence());
-        //uiManager.PlayLevelIntro(levels[currentLevel].game, levels[currentLevel].dev);
+        uiManager.PlayLevelIntro(levels[currentLevel].game, levels[currentLevel].dev);
         ongoingLevel = true;
     }
 
@@ -234,11 +235,11 @@ public class GameManager : MonoBehaviour
         {
             SceneManager.LoadScene(levels[level].name);
             yield return new WaitForSeconds(1f);
-            playersInGame[0].movement.currentLine = Wireframe.Instance.lines.Length / 2;
+            playersInGame[0].movement.currentLine = 14;
             playersInGame[0].movement.SetPlayerOnWireframeLine();
             if (playersInGame[1] != null)
             {
-                playersInGame[1].movement.currentLine = Wireframe.Instance.lines.Length / 2;
+                playersInGame[1].movement.currentLine = 5;
                 playersInGame[1].movement.SetPlayerOnWireframeLine();
             }
             StartLevel();

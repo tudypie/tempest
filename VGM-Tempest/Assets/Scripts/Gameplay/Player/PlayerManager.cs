@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerManager : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class PlayerManager : MonoBehaviour
 
     public int playerNumber;
     public Material playerMaterial;
+    public int scoreLoseOnHit = -3;
+    public Text scoreDecreaseText;
 
     private GameManager gameManager;
 
@@ -31,7 +34,7 @@ public class PlayerManager : MonoBehaviour
 
     public void TakeDamage()
     {
-        gameManager.scoreManager.AddScore(playerNumber, -5);
+        gameManager.scoreManager.AddScore(playerNumber, scoreLoseOnHit);
         gameManager.audioManager.PlaySound(audioSource, gameManager.audioManager.playerTakeDamage);
         anim.Play("PlayerTakeDamage");
     }

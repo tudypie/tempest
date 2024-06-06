@@ -241,7 +241,7 @@ PrefabInstance:
     - target: {fileID: 399986031786316516, guid: 159db8b161f520b42bc318696ca42056,
         type: 3}
       propertyPath: beginSpawningDelay
-      value: 1
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 399986031786316516, guid: 159db8b161f520b42bc318696ca42056,
         type: 3}
@@ -327,7 +327,7 @@ PrefabInstance:
     - target: {fileID: 7751432091648169470, guid: 159db8b161f520b42bc318696ca42056,
         type: 3}
       propertyPath: beginSpawningDelay
-      value: 8
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
