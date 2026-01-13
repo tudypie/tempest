@@ -15,10 +15,15 @@ public class PlayerShooting : MonoBehaviour
     {
         if (context.performed)
         {
-            if (currentShootDelay > 0 || gameManager == null || !gameManager.ongoingLevel) return;
-            Shoot();
-            currentShootDelay = shootDelay;
+            DoShoot();
         }
+    }
+
+    public void DoShoot()
+    {
+        if (currentShootDelay > 0 || gameManager == null || !gameManager.ongoingLevel) return;
+        Shoot();
+        currentShootDelay = shootDelay;
     }
 
     private void Awake()

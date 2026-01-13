@@ -16,16 +16,15 @@ public class GameManager : MonoBehaviour
         public bool showEndLevelText;
     }
 
-    [Header("References")]
     [SerializeField] private GameObject[] playerPrefabs;
     [SerializeField] private Material[] playerMaterial;
     [SerializeField] private Material[] playerLineMaterial;
 
-    [Header("Levels")]
+
     [SerializeField] private GameLevel[] levels;
 
-    [Header("Debug")]
     [SerializeField] private int numOfPlayers = 0;
+    [SerializeField] private int maxNumOfPlayers = 1;
     [SerializeField] private int currentLevel;
     [SerializeField] private float levelDuration;
 
@@ -47,6 +46,8 @@ public class GameManager : MonoBehaviour
 
     public bool TwoPlayersInGame { get { return numOfPlayers == 2; } }
 
+    public bool IsEnglish { get; set; }
+
     public static GameManager Instance { get; private set; }
 
     private void Awake()
@@ -58,7 +59,7 @@ public class GameManager : MonoBehaviour
         else
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject);
+            //DontDestroyOnLoad(gameObject);
         }
 
         audioManager = GetComponent<AudioManager>();
@@ -72,15 +73,12 @@ public class GameManager : MonoBehaviour
         textSpawner = TextMessageSpawner.Instance;
         enemySpawner = EnemySpawner.Instance;
         mainCamera = Camera.main;
-
-        if (ongoingGame)
-            StartLevel();
     }
 
     private void Update()
     {
 
-        if (numOfPlayers == 0 && (InputManager.controls.Player1.Move.WasPressedThisFrame() || 
+        /*if (numOfPlayers == 0 && (InputManager.controls.Player1.Move.WasPressedThisFrame() || 
             InputManager.controls.Player1.Fire.WasPressedThisFrame()))
         {
             PlayerJoin();
@@ -90,7 +88,7 @@ public class GameManager : MonoBehaviour
             InputManager.controls.Player2.Fire.WasPressedThisFrame()))
         {
             PlayerJoin();
-        }
+        }*/
 
         if (!ongoingGame || !ongoingLevel) return;
 
@@ -106,16 +104,24 @@ public class GameManager : MonoBehaviour
 
     public void PlayerJoin()
     {
+        if (numOfPlayers >= maxNumOfPlayers)
+            return;
+
         if (currentLevel == 0 && numOfPlayers == 0)
             StartCoroutine(StartGame());
 
-        PlayerManager player = Instantiate(playerPrefabs[numOfPlayers], Vector3.zero, Quaternion.identity).GetComponent<PlayerManager>();
-        playersInGame[numOfPlayers] = player;
-        player.playerNumber = numOfPlayers;
-        player.playerMaterial = playerMaterial[numOfPlayers];
-        player.movement.currentLine = numOfPlayers == 0 ? 14 : 5;
+        //PlayerManager player = Instantiate(playerPrefabs[numOfPlayers], Vector3.zero, Quaternion.identity).GetComponent<PlayerManager>();
+        //playersInGame[numOfPlayers] = player;
+        //player.playerNumber = numOfPlayers;
+        //player.playerMaterial = playerMaterial[numOfPlayers];
+        //player.movement.currentLine = numOfPlayers == 0 ? 14 : 5;
         uiManager.ActivatePlayerScoreText(numOfPlayers, true);
         numOfPlayers++;
+    }
+
+    public void SetLanguage(bool isEnglish)
+    {
+        IsEnglish = isEnglish;
     }
 
     private IEnumerator StartGame()
@@ -129,15 +135,14 @@ public class GameManager : MonoBehaviour
     private void StartLevel()
     {
         wireframe = Wireframe.Instance;
-        textSpawner = TextMessageSpawner.Instance;
+        //textSpawner = TextMessageSpawner.Instance;
         enemySpawner = EnemySpawner.Instance;
         mainCamera = Camera.main;
 
         mainCamera.GetComponent<Animator>().Play("BeginLevel");
         levelDuration = levels[currentLevel].duration;
         enemySpawner.spawningDuration = levelDuration - 5;
-        textSpawner.StartCoroutine(textSpawner.SpawningSequence());
-        uiManager.PlayLevelIntro(levels[currentLevel].game, levels[currentLevel].dev);
+        //textSpawner.StartCoroutine(textSpawner.SpawningSequence());
         ongoingLevel = true;
     }
 
@@ -168,7 +173,6 @@ public class GameManager : MonoBehaviour
         uiManager.ActivateEndCanvas(false);
         uiManager.ActivatePlayerCanvas(false);
         uiManager.ActivateStartCanvas(true);
-        uiManager.PlayVideoFadeIn();
         uiManager.finishedIntro = false;
 
         wireframe = Wireframe.Instance;

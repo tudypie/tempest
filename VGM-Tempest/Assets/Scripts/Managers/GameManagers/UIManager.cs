@@ -12,13 +12,15 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Text[] scoreFeedbackText;
     [SerializeField] private Text totalScoreText;
     [SerializeField] private GameObject highscoreText;
-    [SerializeField] private Animator videoImage;
-    [SerializeField] private Animator levelIntroPanel;
 
     [Header("Intro Text")]
     [SerializeField] private Text introText;
     [SerializeField] private float delayBetweenMessages;
-    [SerializeField][TextArea(5, 10)] private string[] introMessages;
+
+    [SerializeField][TextArea(5, 10)] private string[] introMessagesEn;
+    [SerializeField][TextArea(5, 10)] private string[] introMessagesRu;
+    private string[] introMessages;
+
     [SerializeField] private float typeWriterEffectDelay = 0.07f;
     public bool finishedIntro;
 
@@ -38,29 +40,18 @@ public class UIManager : MonoBehaviour
         scoreFeedbackText[player].GetComponent<Animator>().Play("Score");
     }
 
-    public void PlayVideoFadeIn() => videoImage.Play("ImageFadeIn");
-
-    public void PlayVideoFadeOut() => videoImage.Play("ImageFadeOut");
-
-    public void PlayLevelIntro(string game, string dev)
-    {
-        levelIntroPanel.transform.GetChild(0).GetComponent<Text>().text = game;
-        levelIntroPanel.transform.GetChild(1).GetComponent<Text>().text = dev;
-        levelIntroPanel.gameObject.SetActive(true);
-        levelIntroPanel.Play("FadeIn");
-    }
-
     public void UpdatePlayerScoreText(int player, int amount) => playerScoresText[player].text = amount.ToString("000");
 
     public void UpdateTotalScoreText(int amount) => totalScoreText.text = amount.ToString("0000");
 
     public IEnumerator PlayGameIntro()
     {
-        PlayVideoFadeOut();
-        yield return new WaitForSeconds(2f);
+        introMessages = GameManager.Instance.IsEnglish ? introMessagesEn : introMessagesRu;
+
         foreach (string message in introMessages)
         {
             StartCoroutine(TypeWriterEffect(introText, message));
+            //introText.text = message;
             yield return new WaitForSeconds(delayBetweenMessages);
         }
         introText.text = string.Empty;
