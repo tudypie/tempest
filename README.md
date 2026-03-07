@@ -1,2 +1,5 @@
-# VGM-Tempest-Unity-Game
- Made for Video Game Museum presentation at Dev Play 2024 in Bucharest
+# A remake of the classic atari tempest game
+
+### Made as a presentation game for Video Game Museum (Bucharest)
+
+### Showcased at DevPlay 2024 (eastern european game dev conference) in Bucharest
